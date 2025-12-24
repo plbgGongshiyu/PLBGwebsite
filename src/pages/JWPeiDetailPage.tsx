@@ -20,11 +20,32 @@ import levelShoesStore from 'figma:asset/c6066b4d25cb52c1a5a5f01a07914771147c579
 import tryanoStore from 'figma:asset/3f7ad4c276a66fa9755263d7aef6c4631a2fd052.png';
 import jwpeiLogo from 'figma:asset/35e0df62aa479dca9c4fcb76de796714860b622a.png';
 
+import celeb1 from '../assets/JWPEI/celebrities/celeb_1.jpg';
+import celeb2 from '../assets/JWPEI/celebrities/celeb_2.jpg';
+import celeb3 from '../assets/JWPEI/celebrities/celeb_3.jpg';
+import celeb4 from '../assets/JWPEI/celebrities/4Gigi Hadid.jpg';
+import celeb5 from '../assets/JWPEI/celebrities/5Hailey Bieber.jpg';
+import celeb6 from '../assets/JWPEI/celebrities/6Anne Hathaway.jpg';
+import celeb7 from '../assets/JWPEI/celebrities/7Emily Ratajkowski.jpg';
+import celeb8 from '../assets/JWPEI/celebrities/8Emily Ratajkowski.jpg';
+import celeb9 from '../assets/JWPEI/celebrities/9Emily Ratajkowski.jpg';
+import celeb10 from '../assets/JWPEI/celebrities/10Doja Cat.jpg';
+import celeb11 from '../assets/JWPEI/celebrities/11Joey King.jpg';
+import celeb12 from '../assets/JWPEI/celebrities/12Irina Shayk.jpg';
+import celeb13 from '../assets/JWPEI/celebrities/13Tinashe.jpg';
+import celeb14 from '../assets/JWPEI/celebrities/14Lucy Hale.jpg';
+import celeb15 from '../assets/JWPEI/celebrities/15Shay Mitchell.jpg';
+import celeb16 from '../assets/JWPEI/celebrities/16Saweetie.jpg';
+import celeb17 from '../assets/JWPEI/celebrities/17Nina Dobrev.jpg';
+import celeb18 from '../assets/JWPEI/celebrities/celeb_18.jpg';
+import celeb19 from '../assets/JWPEI/celebrities/19Ali Wong.jpg';
+
 interface JWPeiDetailPageProps {
   onBack: () => void;
+  onNavigate?: (page: any) => void;
 }
 
-export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
+export function JWPeiDetailPage({ onBack, onNavigate }: JWPeiDetailPageProps) {
   const [showHeader, setShowHeader] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -32,7 +53,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isTransitioningInfluencers, setIsTransitioningInfluencers] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollY } = useScroll();
   const logoScale = useTransform(scrollY, [0, 200], [1, 0.4]);
   const logoY = useTransform(scrollY, [0, 200], [0, -300]);
@@ -40,25 +61,25 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
 
   // Celebrity carousel data
   const celebrities = [
-    { name: 'Jennie Ruby Jane', image: 'https://images.unsplash.com/photo-1671454264961-98e81937dc94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Jennie Ruby Jane', image: 'https://images.unsplash.com/photo-1654945959377-09e02acd5ff7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Selena Gomez', image: 'https://images.unsplash.com/photo-1558769132-cb1aea3c3763?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Gigi Hadid', image: 'https://images.unsplash.com/photo-1614172745174-d76736beb78b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Hailey Bieber', image: 'https://images.unsplash.com/photo-1759563871373-2a7f13ae4b30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Anne Hathaway', image: 'https://images.unsplash.com/photo-1506152983158-b4a74a01c721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Emily Ratajkowski', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Emily Ratajkowski', image: 'https://images.unsplash.com/photo-1506152983158-b4a74a01c721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Emily Ratajkowski', image: 'https://images.unsplash.com/photo-1717944097660-352ec0dc5c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Doja Cat', image: 'https://images.unsplash.com/photo-1654945959377-09e02acd5ff7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Joey King', image: 'https://images.unsplash.com/photo-1717944097660-352ec0dc5c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Irina Shayk', image: 'https://images.unsplash.com/photo-1671454264961-98e81937dc94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Tinashe', image: 'https://images.unsplash.com/photo-1654945959377-09e02acd5ff7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Lucy Hale', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Shay Mitchell', image: 'https://images.unsplash.com/photo-1717944097660-352ec0dc5c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Saweetie', image: 'https://images.unsplash.com/photo-1614172745174-d76736beb78b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Nina Dobrev', image: 'https://images.unsplash.com/photo-1506152983158-b4a74a01c721?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Anitta', image: 'https://images.unsplash.com/photo-1558769132-cb1aea3c3763?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
-    { name: 'Ali Wong', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
+    { name: 'Jennie Ruby Jane', image: celeb1 },
+    { name: 'Jennie Ruby Jane', image: celeb2 },
+    { name: 'Selena Gomez', image: celeb3 },
+    { name: 'Gigi Hadid', image: celeb4 },
+    { name: 'Hailey Bieber', image: celeb5 },
+    { name: 'Anne Hathaway', image: celeb6 },
+    { name: 'Emily Ratajkowski', image: celeb7 },
+    { name: 'Emily Ratajkowski', image: celeb8 },
+    { name: 'Emily Ratajkowski', image: celeb9 },
+    { name: 'Doja Cat', image: celeb10 },
+    { name: 'Joey King', image: celeb11 },
+    { name: 'Irina Shayk', image: celeb12 },
+    { name: 'Tinashe', image: celeb13 },
+    { name: 'Lucy Hale', image: celeb14 },
+    { name: 'Shay Mitchell', image: celeb15 },
+    { name: 'Saweetie', image: celeb16 },
+    { name: 'Nina Dobrev', image: celeb17 },
+    { name: 'Anitta', image: celeb18 },
+    { name: 'Ali Wong', image: celeb19 },
   ];
 
   // Influencers carousel data (20 entries)
@@ -85,26 +106,29 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
     { name: 'Camille Charriere', image: 'https://images.unsplash.com/photo-1717944097660-352ec0dc5c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080' },
   ];
 
+
   const gifGallery = [
-    { 
+    {
       staticImage: jwpeiStatic1,
       gifImage: jwpeiGif1
     },
-    { 
+    {
       staticImage: jwpeiStatic2,
       gifImage: jwpeiGif2
     },
-    { 
+    {
       staticImage: jwpeiStatic3,
       gifImage: jwpeiGif3
     }
   ];
 
   const stores = [
-    { name: 'New York Soho Store', images: [
-      sohoStore1,
-      sohoStore2
-    ]},
+    {
+      name: 'New York Soho Store', images: [
+        sohoStore1,
+        sohoStore2
+      ]
+    },
     { name: 'Galeries Lafayette Champs-Elysees', images: [galeriesLafayetteStore] },
     { name: 'Harvey Nichols Doha', images: [harveyNicholsStore] },
     { name: 'De Bijenkorf', images: [deBijenkorfStore] },
@@ -275,11 +299,11 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
       </section>
 
       {/* Navigation Menu */}
-      <nav 
+      <nav
         className="sticky top-[70px] md:top-[58px] z-30 bg-white py-4 md:py-6 transition-all duration-300 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)]"
       >
         <div className="container mx-auto overflow-x-auto scrollbar-hide">
-          <ul className="flex items-center justify-start md:justify-center gap-6 md:gap-12 lg:gap-20 px-4 md:px-0 min-w-max md:min-w-0">
+          <ul className="flex items-center justify-start md:justify-center gap-6 md:gap-12 lg:gap-20 px-4 md:px-0 min-w-max md:min-w-0 pb-3">
             {[
               { id: 'brand-story', label: 'BRAND STORY' },
               { id: 'retail-store', label: 'RETAIL STORE' },
@@ -289,19 +313,11 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-xs md:text-sm tracking-widest transition-all duration-300 relative whitespace-nowrap ${
-                    activeSection === item.id ? 'opacity-100' : 'opacity-50 hover:opacity-100'
-                  }`}
+                  className={`text-xs md:text-sm tracking-widest transition-all duration-300 relative whitespace-nowrap ${activeSection === item.id ? 'opacity-100' : 'opacity-50 hover:opacity-100'
+                    }`}
                   style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: '16px', letterSpacing: '1px' }}
                 >
                   {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 md:-bottom-2 left-0 right-0 h-px bg-black"
-                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                    />
-                  )}
                 </button>
               </li>
             ))}
@@ -314,10 +330,10 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-16 lg:gap-24 max-w-6xl mx-auto">
             {/* Left: Story Text */}
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-4 md:space-y-6 md:-ml-12">
               <p style={{ fontFamily: 'Roboto', fontWeight: 400, fontSize: '18px', lineHeight: '1.8', color: '#000000' }}>
-                Established in 2018, JW PEI is a Los Angeles–based fashion label dedicated to creating cutting-edge designs for modern woman.  
-                Inspired by the belief that fashion should be effortless, inclusive, and empowering, JW PEI brings a refined, modern sensibility to contemporary style. 
+                Established in 2018, JW PEI is a Los Angeles–based fashion label dedicated to creating cutting-edge designs for modern woman.
+                Inspired by the belief that fashion should be effortless, inclusive, and empowering, JW PEI brings a refined, modern sensibility to contemporary style.
               </p>
               <p style={{ fontFamily: 'Roboto', fontWeight: 400, fontSize: '18px', lineHeight: '1.8', color: '#000000' }}>
                 JW PEI stands out for the distinctive design philosophy and unwavering commitment to vegan materials, striving to minimize environmental impact while fostering a genuine sense of environmental responsibility.
@@ -326,26 +342,26 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
 
             {/* Right: Media Links */}
             <div className="space-y-6 md:space-y-8 md:mx-[50px] md:my-[0px]">
-              <a 
-                href="https://jwpei.com" 
-                target="_blank" 
+              <a
+                href="https://jwpei.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-5 group"
                 style={{ fontFamily: 'Roboto', fontWeight: 700, fontSize: '14px' }}
               >
                 <span className="tracking-wider">jwpei.com</span>
-                <svg 
-                  width="40" 
-                  height="16" 
-                  viewBox="0 0 40 16" 
-                  fill="none" 
+                <svg
+                  width="40"
+                  height="16"
+                  viewBox="0 0 40 16"
+                  fill="none"
                   className="transition-transform group-hover:translate-x-2"
                 >
-                  <path 
-                    d="M32 1L39 8M39 8L32 15M39 8H1" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M32 1L39 8M39 8L32 15M39 8H1"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
@@ -359,7 +375,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
                   </a>
                   <a href="#" className="hover:opacity-60 transition-opacity">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="#000000">
-                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                     </svg>
                   </a>
                 </div>
@@ -375,7 +391,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
           {gifGallery.map((item, index) => {
             const src = index === 1 ? item.gifImage : item.staticImage;
             return (
-              <div 
+              <div
                 key={index}
                 className="aspect-[4/5] overflow-hidden relative"
               >
@@ -403,7 +419,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
           >
             RETAIL STORE
           </h2>
-          
+
           <div className="space-y-8 md:space-y-12">
             {/* First row - New York Soho with 2 images */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -466,8 +482,8 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
           <div className="overflow-hidden">
             <motion.div
               className="flex gap-4 md:gap-6"
-              animate={{ 
-                x: `calc(-${currentSlide * 100}% - ${currentSlide * (slidesPerView < 3 ? 16 : 24)}px)` 
+              animate={{
+                x: `calc(-${currentSlide * 100}% - ${currentSlide * (slidesPerView < 3 ? 16 : 24)}px)`
               }}
               transition={isTransitioning ? { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } : { duration: 0 }}
               onAnimationComplete={handleTransitionEnd}
@@ -476,14 +492,14 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
                 <div
                   key={index}
                   className="flex-shrink-0"
-                  style={{ 
+                  style={{
                     width: slidesPerView === 1
                       ? '100%'
-                      : slidesPerView === 2 
-                        ? `calc((100% - 1rem) / 2)` 
+                      : slidesPerView === 2
+                        ? `calc((100% - 1rem) / 2)`
                         : slidesPerView === 3
                           ? `calc((100% - 2rem) / 3)`
-                          : `calc((100% - 4rem) / 5)` 
+                          : `calc((100% - 4rem) / 5)`
                   }}
                 >
                   <div className="space-y-3 md:space-y-4">
@@ -513,7 +529,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
             aria-label="Previous slide"
           >
             <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-              <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <button
@@ -522,7 +538,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
             aria-label="Next slide"
           >
             <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-              <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
@@ -532,9 +548,8 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 md:w-2 md:h-2 rounded-full transition-all duration-300 ${
-                  getCurrentDot() === index ? 'bg-black w-4 md:w-8' : 'bg-black/30'
-                }`}
+                className={`w-2 h-2 md:w-2 md:h-2 rounded-full transition-all duration-300 ${getCurrentDot() === index ? 'bg-black w-4 md:w-8' : 'bg-black/30'
+                  }`}
               />
             ))}
           </div>
@@ -557,8 +572,8 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
           <div className="overflow-hidden">
             <motion.div
               className="flex gap-4 md:gap-6"
-              animate={{ 
-                x: `calc(-${currentSlideInfluencers * 100}% - ${currentSlideInfluencers * (slidesPerView < 3 ? 16 : 24)}px)` 
+              animate={{
+                x: `calc(-${currentSlideInfluencers * 100}% - ${currentSlideInfluencers * (slidesPerView < 3 ? 16 : 24)}px)`
               }}
               transition={isTransitioningInfluencers ? { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } : { duration: 0 }}
               onAnimationComplete={handleTransitionEndInfluencers}
@@ -567,14 +582,14 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
                 <div
                   key={`dup-${index}`}
                   className="flex-shrink-0"
-                  style={{ 
+                  style={{
                     width: slidesPerView === 1
                       ? '100%'
-                      : slidesPerView === 2 
-                        ? `calc((100% - 1rem) / 2)` 
+                      : slidesPerView === 2
+                        ? `calc((100% - 1rem) / 2)`
                         : slidesPerView === 3
                           ? `calc((100% - 2rem) / 3)`
-                          : `calc((100% - 4rem) / 5)` 
+                          : `calc((100% - 4rem) / 5)`
                   }}
                 >
                   <div className="space-y-3 md:space-y-4">
@@ -604,7 +619,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
             aria-label="Previous slide"
           >
             <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-              <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <button
@@ -613,7 +628,7 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
             aria-label="Next slide"
           >
             <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-              <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
@@ -623,9 +638,8 @@ export function JWPeiDetailPage({ onBack }: JWPeiDetailPageProps) {
               <button
                 key={`dup-dot-${index}`}
                 onClick={() => goToSlideInfluencers(index)}
-                className={`w-2 h-2 md:w-2 md:h-2 rounded-full transition-all duration-300 ${
-                  getCurrentDotInfluencers() === index ? 'bg-black w-4 md:w-8' : 'bg-black/30'
-                }`}
+                className={`w-2 h-2 md:w-2 md:h-2 rounded-full transition-all duration-300 ${getCurrentDotInfluencers() === index ? 'bg-black w-4 md:w-8' : 'bg-black/30'
+                  }`}
               />
             ))}
           </div>

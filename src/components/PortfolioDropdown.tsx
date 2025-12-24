@@ -1,7 +1,9 @@
 import jwpeiDropdownImage from 'figma:asset/5830a4ea4168decb0972cd1fc235720bba8369b7.png';
 import danselenteDropdownImage from 'figma:asset/9e80a3c1eb06eec8a49dd0b0d171ce70755201be.png';
 import lomonteDropdownImage from 'figma:asset/fa9dc742d96b47dc3de4d94271eef8c06eaed1e5.png';
-import jwpeiLogo from '../assets/JWPEI-logo1.png';
+import jwpeiLogo from '../assets/logo_JWPEI.png';
+import danseLenteLogo from '../assets/logo_DANSELENTE.png';
+import loMonteLogo from '../assets/logo_LOMONTEINTERNATIONAL.png';
 
 const brands = [
   {
@@ -13,12 +15,14 @@ const brands = [
   {
     name: 'DANSE LENTE',
     image: danselenteDropdownImage,
-    page: 'danselente'
+    page: 'danselente',
+    labelImage: danseLenteLogo
   },
   {
     name: 'LO MONTE INTERNATIONAL',
     image: lomonteDropdownImage,
-    page: 'lomonte'
+    page: 'lomonte',
+    labelImage: loMonteLogo
   }
 ];
 
@@ -46,18 +50,18 @@ export function PortfolioDropdown({ onBrandClick, isMobile = false }: PortfolioD
                     <img
                       src={brand.labelImage}
                       alt={brand.name}
-                      className="h-[5px] w-auto"
+                      className="h-6 w-auto object-contain"
                     />
                   ) : (
-                    <h3 
-                      className="tracking-wider text-center" 
+                    <h3
+                      className="tracking-wider text-center"
                       style={{ fontSize: '12px', fontFamily: 'Roboto', fontWeight: 400 }}
                     >
                       {brand.name}
                     </h3>
                   )}
                 </div>
-                
+
                 {/* Brand Image */}
                 <div className="aspect-[2/3] relative overflow-hidden bg-gray-100 rounded-lg">
                   <img
@@ -75,7 +79,7 @@ export function PortfolioDropdown({ onBrandClick, isMobile = false }: PortfolioD
   }
 
   return (
-    <div 
+    <div
       className="border-t border-black/10 bg-white shadow-lg animate-slideDown"
     >
       <div className="px-6 md:px-12 lg:px-20 py-10">
@@ -94,7 +98,7 @@ export function PortfolioDropdown({ onBrandClick, isMobile = false }: PortfolioD
                     <img
                       src={brand.labelImage}
                       alt={brand.name}
-                      className="h-[5px] w-auto"
+                      className="h-6 w-auto object-contain"
                     />
                   ) : (
                     <h3 className="tracking-wider text-center" style={{ fontSize: '14px', fontFamily: 'Roboto', fontWeight: 400 }}>
@@ -102,7 +106,7 @@ export function PortfolioDropdown({ onBrandClick, isMobile = false }: PortfolioD
                     </h3>
                   )}
                 </div>
-                
+
                 {/* Brand Image */}
                 <div className="aspect-[2/3] relative overflow-hidden bg-gray-100">
                   <img

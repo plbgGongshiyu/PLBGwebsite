@@ -25,9 +25,9 @@ export function GroupPage({ language }: GroupPageProps) {
   const figuresRef = useRef<HTMLDivElement>(null);
   const distributionRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>, sectionId: string) => {
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>, sectionId: string) => {
     if (!ref.current) return;
-    
+
     setActiveSection(sectionId);
     const headerOffset = 150; // Height of fixed header + nav
     const elementPosition = ref.current.getBoundingClientRect().top;
@@ -90,7 +90,7 @@ export function GroupPage({ language }: GroupPageProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  const navItems: { id: string; label: string; ref: React.RefObject<HTMLDivElement | null> }[] = [
     { id: 'group', label: 'GROUP', ref: groupRef },
     { id: 'vision', label: 'VISION', ref: visionRef },
     { id: 'responsibility', label: 'CORPORATE RESPONSIBILITY', ref: responsibilityRef },
@@ -101,8 +101,9 @@ export function GroupPage({ language }: GroupPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <motion.section 
-        className="px-4 md:px-12 lg:px-20 pt-24 md:pt-32 pb-12 md:pb-16"
+      <motion.section
+        className="px-4 md:px-12 lg:px-20 pb-12 md:pb-16"
+        style={{ paddingTop: '64px' }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -117,29 +118,21 @@ export function GroupPage({ language }: GroupPageProps) {
       </motion.section>
 
       {/* Sticky Navigation Menu */}
-      <nav 
+      <nav
         className="sticky top-[70px] md:top-[58px] z-30 bg-white py-4 md:py-6 transition-all duration-300 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)]"
         style={{ hyphens: 'none' }}
       >
         <div className="container mx-auto overflow-x-auto scrollbar-hide">
-          <ul className="flex items-center justify-start md:justify-center gap-6 md:gap-12 lg:gap-20 px-4 md:px-0 min-w-max md:min-w-0">
+          <ul className="flex items-center justify-start md:justify-center gap-6 md:gap-12 lg:gap-20 px-4 md:px-0 min-w-max md:min-w-0 pb-3">
             {navItems.map((item) => (
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.ref, item.id)}
-                  className={`tracking-widest transition-all duration-300 relative whitespace-nowrap ${
-                    activeSection === item.id ? 'opacity-100' : 'opacity-50 hover:opacity-100'
-                  }`}
+                  className={`tracking-widest transition-all duration-300 relative whitespace-nowrap ${activeSection === item.id ? 'opacity-100' : 'opacity-50 hover:opacity-100'
+                    }`}
                   style={{ fontFamily: 'Playfair Display', fontSize: '16px', letterSpacing: '1px' }}
                 >
                   {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeSectionGroup"
-                      className="absolute -bottom-1 md:-bottom-2 left-0 right-0 h-px bg-black"
-                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                    />
-                  )}
                 </button>
               </li>
             ))}
@@ -306,84 +299,82 @@ export function GroupPage({ language }: GroupPageProps) {
       </section>
 
       {/* KEY FIGURES Section */}
-      <section ref={figuresRef} className="relative py-20 md:py-32 lg:py-40">
-        <div className="absolute inset-0 overflow-hidden">
-          <img
-            src={handbagImage}
-            alt="Key Figures"
-            style={{ height: '100%', width: 'auto', objectFit: 'cover', objectPosition: 'left center' }}
-          />
-        </div>
-
-        <div className="relative px-4 md:px-12 lg:px-20 h-full" style={{ marginTop: '30px' }}>
+      <section ref={figuresRef} className="relative w-full">
+        <img
+          src={handbagImage}
+          alt="Key Figures"
+          className="w-full h-auto block"
+        />
+        <div className="absolute inset-0 px-4 md:px-12 lg:px-20 py-12 md:py-16">
           <motion.div
-            className="max-w-3xl text-white space-y-8 md:space-y-12"
+            className="max-w-3xl text-white flex flex-col justify-between h-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="space-y-4" style={{ marginTop: '-20px' }}>
+            <div className="space-y-4">
               <h2
                 className="tracking-widest"
-                style={{ fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '30px', color: '#ffffff', letterSpacing: '1px' }}
+                style={{ fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '15px', color: '#ffffff', letterSpacing: '1px' }}
               >
                 KEY FIGURES
               </h2>
-
               <p className="text-xs md:text-sm leading-relaxed" style={{ hyphens: 'none', maxWidth: '320%', color: '#ffffff' }}>
-                <div style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: 'clamp(28px, 8vw, 45px)', lineHeight: 1.2, color: '#ffffff' }}>
+                <div style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: 'clamp(14px, 4vw, 22.5px)', lineHeight: 1.2, color: '#ffffff' }}>
                   PLBG is a global brand group focused on Investment, Brand Management, Creative Development, and Sustainable Growth in Fashion.
                 </div>
               </p>
             </div>
-
             {/* Statistics */}
-            <div className="flex w-full flex-col gap-4 md:gap-6">
-              <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-6 w-full">
+            <div className="flex w-full flex-row gap-x-24 md:gap-x-32 lg:gap-x-48 mt-4 md:mt-6">
+              <div
+                className="flex flex-col gap-y-12 md:gap-y-32 lg:gap-y-48"
+                style={{ marginLeft: '0px', marginRight: '0px' }}
+              >
                 <div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(32px, 6vw, 60px)', lineHeight: 1, color: '#ffffff' }}>200+</div>
-                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(12px, 2vw, 16px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Countries</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', height: '65px' }}>
+                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(16px, 3vw, 30px)', lineHeight: 1, color: '#ffffff' }}>200+</div>
+                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(6px, 1vw, 8px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Countries</div>
                   </div>
                 </div>
-
                 <div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(32px, 6vw, 60px)', lineHeight: 1, color: '#ffffff' }}>300+</div>
-                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(12px, 2vw, 16px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Point of Sale</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', height: '65px' }}>
+                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(16px, 3vw, 30px)', lineHeight: 1, color: '#ffffff' }}>2M+</div>
+                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(6px, 1vw, 8px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Social Media Followers</div>
                   </div>
                 </div>
-
+              </div>
+              <div
+                className="flex flex-col gap-y-12 md:gap-y-32 lg:gap-y-48"
+                style={{ marginLeft: '65px', marginRight: '0px' }}
+              >
                 <div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(32px, 6vw, 60px)', lineHeight: 1, color: '#ffffff' }}>2M+</div>
-                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(12px, 2vw, 16px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Social Media Followers</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', height: '65px' }}>
+                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(16px, 3vw, 30px)', lineHeight: 1, color: '#ffffff' }}>300+</div>
+                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(6px, 1vw, 8px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Point of Sale</div>
                   </div>
                 </div>
-
                 <div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(32px, 6vw, 60px)', lineHeight: 1, color: '#ffffff' }}>$150M+</div>
-                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(12px, 2vw, 16px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Global Annual Retail Sales</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', height: '65px' }}>
+                    <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(16px, 3vw, 30px)', lineHeight: 1, color: '#ffffff' }}>$150M+</div>
+                    <div className="tracking-wide" style={{ fontFamily: 'Roboto', fontSize: 'clamp(6px, 1vw, 8px)', fontWeight: 400, lineHeight: 1.4, color: '#ffffff' }}>Global Annual Retail Sales</div>
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
-
         </div>
       </section>
-
       {/* GLOBAL DISTRIBUTION Section */}
       <section
         ref={distributionRef}
         className="pb-12 md:pb-16 lg:pb-24"
         style={{ paddingTop: '200px' }}
       >
-        <div className="px-4 md:px-12 lg:px-20">
+        <div>
           <motion.div
-            className="max-w-3xl mx-auto space-y-6 md:space-y-8 text-center"
+            className="w-[95%] lg:w-[40%] mx-auto space-y-6 md:space-y-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -437,8 +428,8 @@ export function GroupPage({ language }: GroupPageProps) {
             laRinascente,
             deBijenkorf,
           ].map((image, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="aspect-[4/3] relative overflow-hidden"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

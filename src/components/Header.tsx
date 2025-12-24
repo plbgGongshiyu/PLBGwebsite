@@ -1,15 +1,15 @@
 import { useState, useRef } from 'react';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { GroupDropdown } from './GroupDropdown';
 import { PortfolioDropdown } from './PortfolioDropdown';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import logoImage from 'figma:asset/94ef899121d2e6fe0c4ab3e8f396a1abced48071.png';
 
-export function Header({ language, setLanguage, onNavigate, currentPage, onBrandClick }: { 
-  language: 'EN' | 'CN', 
+export function Header({ language, setLanguage, onNavigate, currentPage, onBrandClick }: {
+  language: 'EN' | 'CN',
   setLanguage: (lang: 'EN' | 'CN') => void,
-  onNavigate?: (page: 'home' | 'group' | 'portfolio' | 'media' | 'careers') => void,
-  currentPage?: 'home' | 'group' | 'portfolio' | 'media' | 'careers',
+  onNavigate?: (page: 'home' | 'group' | 'portfolio' | 'media' | 'careers' | 'jwpei' | 'danselente' | 'lomonte' | 'job-detail') => void,
+  currentPage?: 'home' | 'group' | 'portfolio' | 'media' | 'careers' | 'jwpei' | 'danselente' | 'lomonte' | 'job-detail',
   onBrandClick?: (brand: string) => void
 }) {
   const [activeDropdown, setActiveDropdown] = useState<'group' | 'portfolio' | null>(null);
@@ -39,14 +39,14 @@ export function Header({ language, setLanguage, onNavigate, currentPage, onBrand
   ];
 
   return (
-    <header 
+    <header
       className="sticky top-0 z-50 bg-white border-b border-black/10"
       onMouseLeave={handleMouseLeave}
     >
-      <div className="md:px-12 lg:px-20 lg:px-[80px] lg:py-[22px] px-[20px] py-[30px]">
+      <div className="md:px-12 lg:px-20 lg:px-[30px] lg:py-[22px] px-[20px] py-[30px]">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button 
+          <button
             onClick={() => onNavigate?.('home')}
             className="hover:opacity-60 transition-opacity cursor-pointer -my-4"
           >
@@ -130,7 +130,7 @@ export function Header({ language, setLanguage, onNavigate, currentPage, onBrand
                             >
                               {item.label}
                             </button>
-                            
+
                             {/* Right: Arrow - Click to toggle submenu */}
                             {item.hasDropdown && (
                               <button
@@ -140,8 +140,8 @@ export function Header({ language, setLanguage, onNavigate, currentPage, onBrand
                                 }}
                                 className="px-6 py-4 hover:opacity-60 transition-opacity"
                               >
-                                <ChevronDown 
-                                  className={`h-4 w-4 transition-transform ${mobileSubmenuOpen === item.id ? 'rotate-180' : ''}`} 
+                                <ChevronDown
+                                  className={`h-4 w-4 transition-transform ${mobileSubmenuOpen === item.id ? 'rotate-180' : ''}`}
                                 />
                               </button>
                             )}
@@ -153,7 +153,7 @@ export function Header({ language, setLanguage, onNavigate, currentPage, onBrand
                               {item.id === 'group' ? (
                                 <GroupDropdown language={language} isMobile />
                               ) : (
-                                <PortfolioDropdown 
+                                <PortfolioDropdown
                                   onBrandClick={(brand) => {
                                     onBrandClick?.(brand);
                                     setMobileMenuOpen(false);
@@ -176,7 +176,7 @@ export function Header({ language, setLanguage, onNavigate, currentPage, onBrand
       </div>
 
       {/* Dropdown Panels - Absolute positioned to overlay content */}
-      <div 
+      <div
         className="absolute left-0 right-0 top-full"
         onMouseEnter={() => closeTimeoutRef.current && clearTimeout(closeTimeoutRef.current)}
       >
@@ -184,8 +184,8 @@ export function Header({ language, setLanguage, onNavigate, currentPage, onBrand
           <GroupDropdown key="group-dropdown" language={language} />
         )}
         {activeDropdown === 'portfolio' && (
-          <PortfolioDropdown 
-            key="portfolio-dropdown" 
+          <PortfolioDropdown
+            key="portfolio-dropdown"
             onBrandClick={(brand) => {
               onBrandClick?.(brand);
               setActiveDropdown(null);

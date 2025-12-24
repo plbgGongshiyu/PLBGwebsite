@@ -1,7 +1,142 @@
 import { useState } from 'react';
-import { Footer } from '../components/Footer';
 
-export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
+import thriveImg from 'figma:asset/ada0a97b6d69772519cb064b3400f319ce112794.png';
+import communicationImg from 'figma:asset/90e5f80558085ce9176b9558b1804aa60ff045b9.png';
+import inclusionImg from 'figma:asset/31b83d541f46d42c236295d5decd0a720b18013a.png';
+import flexibilityImg from 'figma:asset/f662356dca547c88645f716d935ad3d2539bfcff.png';
+import creativityImg from 'figma:asset/220226788c7263a0cab67634ec600885a0479b3c.png';
+
+interface ValueSlide {
+  title: string;
+  description: string;
+  image: string;
+}
+
+function ValuesCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides: ValueSlide[] = [
+    {
+      title: 'Thrive',
+      description:
+        "At PL Group we treasure our colleagues and we grow together. We offer the resources and opportunities that allow every employee to be inspired, motivated, and thrived to their fullest potential. As a group, everyone's contribution is assured to be rewarded.",
+      image: thriveImg,
+    },
+    {
+      title: 'Communication',
+      description:
+        'With a flat hierarchical structure, PL Group encourages open communication within the organization. We value various initiatives, collaborative work and commitment to empowering every individual at every level to play a part in our collective success. Your voice matters.',
+      image: communicationImg,
+    },
+    {
+      title: 'Inclusion',
+      description:
+        'We promote a culture where everyone is free to express ideas and truly be themselves. Our teams consist of talents from different identities, cultures and experiences. We keep growing the diverse communities to continuously fuel the energy of PL Group.',
+      image: inclusionImg,
+    },
+    {
+      title: 'Flexibility',
+      description:
+        'PL Group has a flexible framework to elevate your work performance, along with dynamic working schedules and office spaces around the world. We foster a community that centralizes the key to maintaining a healthy life-work balance, in order to attain personal and professional fulfillment.',
+      image: flexibilityImg,
+    },
+    {
+      title: 'Creativity',
+      description:
+        'At PL Group we nurture creative thinking and ensure you bring new ideas to remain one step ahead. Our innovative vision will lead and empower all our employees to exceed expectations.',
+      image: creativityImg,
+    },
+  ];
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  return (
+    <div className="relative w-full h-screen md:h-screen">
+      <div className="relative w-full h-full overflow-hidden">
+        <div
+          className="flex h-full transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div key={index} className="min-w-full h-full flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2 h-1/2 md:h-full bg-[#F5F3F0] flex items-center justify-center px-6 py-8 md:px-12 lg:px-16">
+                <div className="max-w-xl text-center">
+                  <p
+                    className="text-[10px] md:text-xs tracking-[0.2em] opacity-60 mb-4 md:mb-6"
+                    style={{ fontFamily: 'Barlow' }}
+                  >
+                    OUR VALUES
+                  </p>
+                  <h2
+                    className="mb-4 md:mb-8 leading-tight uppercase"
+                    style={{ fontFamily: 'Barlow', fontWeight: 700, fontSize: '16px' }}
+                  >
+                    {slide.title}
+                  </h2>
+                  <p className="text-xs md:text-sm leading-relaxed opacity-80" style={{ fontFamily: 'Barlow' }}>
+                    {slide.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/2 h-1/2 md:h-full">
+                <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button
+        onClick={handlePrev}
+        className="absolute left-2 md:left-8 top-1/4 md:top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 flex items-center justify-center transition-all duration-300 hover:opacity-60 z-10"
+        aria-label="Previous slide"
+        type="button"
+      >
+        <svg width="24" height="12" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
+          <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      <button
+        onClick={handleNext}
+        className="absolute right-2 md:right-8 top-1/4 md:top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 flex items-center justify-center transition-all duration-300 hover:opacity-60 z-10"
+        aria-label="Next slide"
+        type="button"
+      >
+        <svg width="24" height="12" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
+          <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3 z-10">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${currentSlide === index ? 'bg-black w-6 md:w-8' : 'bg-black/40 hover:bg-black/60 w-2'
+              }`}
+            aria-label={`Go to slide ${index + 1}`}
+            type="button"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function CareersPage({ language, onNavigate }: { language: 'EN' | 'CN'; onNavigate?: (page: any) => void }) {
+
   const jobOpenings = [
     { position: 'Sales Associate', brand: 'JW PEI', location: 'New York', link: '#' },
     { position: 'Wholesale Coordinator', brand: 'DANSE LENTE', location: 'Budapest', link: '#' },
@@ -16,26 +151,6 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
     { position: 'Junior Accounts Payable Specialist', brand: 'DANSE LENTE', location: 'Budapest', link: '#' }
   ];
 
-  const values = [
-    {
-      title: 'CREATIVITY',
-      description: 'We champion ideas-first thinking and invite every teammate to contribute bold perspectives that move fashion forward.'
-    },
-    {
-      title: 'INTEGRITY',
-      description: 'We lead with transparency, act with respect, and hold ourselves accountable to the highest standards in every decision.'
-    },
-    {
-      title: 'COLLABORATION',
-      description: 'We build together—across brands, functions, and regions—because shared success is the foundation of lasting growth.'
-    },
-    {
-      title: 'SUSTAINABILITY',
-      description: 'We are committed to responsible fashion, minimizing impact through thoughtful materials, processes, and partnerships.'
-    }
-  ];
-  const [activeValue, setActiveValue] = useState(0);
-
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -48,7 +163,10 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
     <>
       <div className="min-h-screen bg-white">
         {/* Intro Text copied from Group page hero */}
-        <section className="px-4 md:px-12 lg:px-20 pt-24 md:pt-32 pb-12 md:pb-16">
+        <section
+          className="px-4 md:px-12 lg:px-20 pb-12 md:pb-16"
+          style={{ paddingTop: '64px' }}
+        >
           <div className="max-w-6xl mx-auto text-center">
             <h1
               className="text-2xl md:text-4xl lg:text-5xl tracking-tight leading-relaxed"
@@ -110,74 +228,15 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
         </section>
 
         {/* Our Values Slider */}
-        <section
-          id="values"
-          className="py-16 md:py-24 lg:py-28 px-6 md:px-12 lg:px-20"
-        >
-          <div className="max-w-5xl mx-auto text-center space-y-8 md:space-y-10">
-            <h2
-              style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: '30px', letterSpacing: '1px', color: '#000000' }}
-            >
-              OUR VALUES
-            </h2>
-
-            <div className="relative border border-black/10 bg-white">
-              <div className="px-6 md:px-10 py-10 md:py-12">
-                <h3
-                  className="mb-4"
-                  style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: '24px', letterSpacing: '0.5px', color: '#000000' }}
-                >
-                  {values[activeValue].title}
-                </h3>
-                <p
-                  style={{ fontFamily: 'Roboto', fontWeight: 400, fontSize: '18px', lineHeight: '1.8', color: '#000000' }}
-                >
-                  {values[activeValue].description}
-                </p>
-              </div>
-
-              <div className="absolute left-0 right-0 -bottom-14 flex items-center justify-center gap-6">
-                <button
-                  type="button"
-                  onClick={() => setActiveValue((prev) => (prev - 1 + values.length) % values.length)}
-                  className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-300 hover:opacity-60"
-                  aria-label="Previous value"
-                >
-                  <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-                    <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveValue((prev) => (prev + 1) % values.length)}
-                  className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-300 hover:opacity-60"
-                  aria-label="Next value"
-                >
-                  <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-                    <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div className="flex justify-center gap-2 pt-12">
-              {values.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveValue(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${activeValue === idx ? 'bg-black w-6' : 'bg-black/30'}`}
-                  aria-label={`Go to value ${idx + 1}`}
-                />
-              ))}
-            </div>
-          </div>
+        <section id="values" className="w-full">
+          <ValuesCarousel />
         </section>
 
         {/* Job Opportunities Section */}
         <section id="opportunities" className="px-4 md:px-12 lg:px-20 py-12 md:py-24 lg:py-32">
-          <h2 
+          <h2
             className="text-center mb-[20px]"
-            style={{ 
+            style={{
               fontFamily: 'Playfair Display',
               fontWeight: 400,
               fontSize: '36px',
@@ -187,12 +246,12 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
           >
             JOB OPPORTUNITIES
           </h2>
-          
+
           <div className="w-full overflow-x-auto mt-16 md:mt-20">
             {/* Table Header - Hidden on mobile, card style instead */}
             <div className="hidden md:grid grid-cols-12 gap-4 pb-4 border-b border-black/20">
               <div className="col-span-5">
-                <p 
+                <p
                   className="uppercase"
                   style={{
                     fontSize: '18px',
@@ -206,7 +265,7 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
                 </p>
               </div>
               <div className="col-span-2">
-                <p 
+                <p
                   className="uppercase"
                   style={{
                     fontSize: '18px',
@@ -220,7 +279,7 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
                 </p>
               </div>
               <div className="col-span-3">
-                <p 
+                <p
                   className="uppercase"
                   style={{
                     fontSize: '18px',
@@ -234,7 +293,7 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
                 </p>
               </div>
               <div className="col-span-2">
-                <p 
+                <p
                   className="uppercase"
                   style={{
                     fontSize: '18px',
@@ -263,23 +322,28 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
                       <span>·</span>
                       <span style={{ fontFamily: 'Roboto' }}>{job.location}</span>
                     </div>
-                    <button className="flex items-center gap-2 text-[10px] tracking-wider opacity-60 hover:opacity-100 transition-opacity mt-2" style={{ fontFamily: 'Roboto' }}>
+                    <button
+                      onClick={() => onNavigate?.('job-detail')}
+                      className="flex items-center gap-2 text-[10px] tracking-wider opacity-60 hover:opacity-100 transition-opacity mt-2"
+                      style={{ fontFamily: 'Roboto' }}
+                    >
                       View Details
-                      <svg 
-                        width="16" 
-                        height="10" 
-                        viewBox="0 0 20 12" 
-                        fill="none" 
+                      <svg
+                        width="16"
+                        height="10"
+                        viewBox="0 0 20 12"
+                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="opacity-60"
                       >
-                        <path 
-                          d="M0 6H18M18 6L13 1M18 6L13 11" 
-                          stroke="currentColor" 
+                        <path
+                          d="M0 6H18M18 6L13 1M18 6L13 11"
+                          stroke="currentColor"
                           strokeWidth="1.5"
                         />
                       </svg>
                     </button>
+
                   </div>
 
                   {/* Desktop Table Layout */}
@@ -294,27 +358,28 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
                       <p className="text-sm opacity-70" style={{ fontFamily: 'Roboto', fontSize: '16px' }}>{job.location}</p>
                     </div>
                     <div className="col-span-2">
-                      <a 
-                        href={job.link}
+                      <button
+                        onClick={() => onNavigate?.('job-detail')}
                         className="text-sm tracking-wider opacity-70 hover:opacity-100 transition-opacity inline-flex items-center gap-2"
                         style={{ fontFamily: 'Roboto', fontSize: '16px', textTransform: 'capitalize' }}
                       >
                         View
-                        <svg 
-                          width="16" 
-                          height="10" 
-                          viewBox="0 0 20 12" 
-                          fill="none" 
+                        <svg
+                          width="16"
+                          height="10"
+                          viewBox="0 0 20 12"
+                          fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                           className="opacity-80"
                         >
-                          <path 
-                            d="M0 6H18M18 6L13 1M18 6L13 11" 
-                            stroke="currentColor" 
+                          <path
+                            d="M0 6H18M18 6L13 1M18 6L13 11"
+                            stroke="currentColor"
                             strokeWidth="1.5"
                           />
                         </svg>
-                      </a>
+                      </button>
+
                     </div>
                   </div>
                 </div>
@@ -323,7 +388,7 @@ export function CareersPage({ language }: { language: 'EN' | 'CN' }) {
           </div>
         </section>
 
-        <Footer language={language} />
+
       </div>
     </>
   );

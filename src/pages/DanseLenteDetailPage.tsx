@@ -36,22 +36,22 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
   const [activeSection, setActiveSection] = useState('');
   const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollY } = useScroll();
   const logoScale = useTransform(scrollY, [0, 200], [1, 0.4]);
   const logoY = useTransform(scrollY, [0, 200], [0, -300]);
   const logoOpacity = useTransform(scrollY, [0, 150, 200], [1, 0.5, 0]);
 
   const gifGallery = [
-    { 
+    {
       staticImage: danseLenteStatic1,
       gifImage: danseLenteGif1
     },
-    { 
+    {
       staticImage: danseLenteStatic2,
       gifImage: danseLenteGif2
     },
-    { 
+    {
       staticImage: danseLenteStatic3,
       gifImage: danseLenteGif3
     }
@@ -78,7 +78,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
       title: 'SS22 Bag Collaboration with Maisie Wilen',
       image: specialProject4,
       description: "We are collaborating with the designer Maisie Wilen to work on a collection of bags for her SS22 collection. Details are still yet to be confirmed, but it is likely that the bags will be showcased in her runway show and will be carried by Maisie Wilen, Danse Lente and other select retailers. Maisie Wilen is the first designer to be backed by Kanye West's incubator program for young talent in the design world. She has launched four collections so far and is being represented by Karla Otto."
-    }  
+    }
   ];
 
   // Collaborations data
@@ -213,11 +213,11 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
       </section>
 
       {/* Navigation Menu */}
-      <nav 
+      <nav
         className="sticky top-[70px] md:top-[58px] z-30 bg-white py-4 md:py-6 transition-all duration-300 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.08)]"
       >
         <div className="container mx-auto overflow-x-auto scrollbar-hide">
-          <ul className="flex items-center justify-start md:justify-center gap-4 md:gap-8 lg:gap-16 px-4 md:px-0 min-w-max md:min-w-0">
+          <ul className="flex items-center justify-start md:justify-center gap-4 md:gap-8 lg:gap-16 px-4 md:px-0 min-w-max md:min-w-0 pb-3">
             {[
               { id: 'brand-story', label: 'BRAND STORY' },
               { id: 'pop-ups', label: 'POP-UPS' },
@@ -227,19 +227,11 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-xs md:text-sm tracking-widest transition-all duration-300 relative whitespace-nowrap ${
-                    activeSection === item.id ? 'opacity-100' : 'opacity-50 hover:opacity-100'
-                  }`}
+                  className={`text-xs md:text-sm tracking-widest transition-all duration-300 relative whitespace-nowrap ${activeSection === item.id ? 'opacity-100' : 'opacity-50 hover:opacity-100'
+                    }`}
                   style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: '16px', letterSpacing: '1px' }}
                 >
                   {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 md:-bottom-2 left-0 right-0 h-px bg-black"
-                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                    />
-                  )}
                 </button>
               </li>
             ))}
@@ -252,43 +244,43 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="grid md:grid-cols-[2fr_1fr] gap-8 md:gap-16 lg:gap-24 max-w-6xl mx-auto">
             {/* Left: Story Text */}
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-4 md:space-y-6 md:-ml-12">
               <p style={{ fontFamily: 'Roboto', fontWeight: 400, fontSize: '18px', lineHeight: '1.8' }}>
-                 Danse Lente, which means Slow Dance in French, focuses on high 
-                 quality leather goods inspired by contemporary aesthetics and modern 
-                 architecture. 
+                Danse Lente, which means Slow Dance in French, focuses on high
+                quality leather goods inspired by contemporary aesthetics and modern
+                architecture.
               </p>
               <p style={{ fontFamily: 'Roboto', fontWeight: 400, fontSize: '18px', lineHeight: '1.8' }}>
-                The philosophy of the brand focuses on timelessness in design. 
-                Attention to construction and finished are very strong foundations for 
-                the brand. From the beginning of sampling to final product, we work with 
-                skilled craftsmen, tanneries and metal smith artisans both in Italy and 
+                The philosophy of the brand focuses on timelessness in design.
+                Attention to construction and finished are very strong foundations for
+                the brand. From the beginning of sampling to final product, we work with
+                skilled craftsmen, tanneries and metal smith artisans both in Italy and
                 from further afield to create impeccably crafted products.
               </p>
             </div>
 
             {/* Right: Media Links */}
             <div className="space-y-6 md:space-y-8">
-              <a 
-                href="https://danselente.com" 
-                target="_blank" 
+              <a
+                href="https://danselente.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-5 group"
                 style={{ fontFamily: 'Roboto', fontWeight: 700, fontSize: '14px' }}
               >
                 <span className="tracking-wider">danselente.com</span>
-                <svg 
-                  width="40" 
-                  height="16" 
-                  viewBox="0 0 40 16" 
-                  fill="none" 
+                <svg
+                  width="40"
+                  height="16"
+                  viewBox="0 0 40 16"
+                  fill="none"
                   className="transition-transform group-hover:translate-x-2"
                 >
-                  <path 
-                    d="M32 1L39 8M39 8L32 15M39 8H1" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
+                  <path
+                    d="M32 1L39 8M39 8L32 15M39 8H1"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
@@ -302,7 +294,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
                   </a>
                   <a href="#" className="hover:opacity-60 transition-opacity">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="#000000">
-                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                     </svg>
                   </a>
                 </div>
@@ -318,7 +310,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
           {gifGallery.map((item, index) => {
             const src = index === 1 ? item.gifImage : item.staticImage;
             return (
-              <div 
+              <div
                 key={index}
                 className="aspect-[4/5] overflow-hidden relative"
               >
@@ -342,7 +334,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
           >
             POP-UPS
           </h2>
-          
+
           <div className="space-y-8 md:space-y-12">
             {/* First row - Two separate pop-ups with individual titles */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -373,7 +365,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
                     <ImageWithFallback
                       src={popup.images[0]}
                       alt={popup.name}
-                    className="w-full h-full object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <p
@@ -444,7 +436,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
             className="absolute left-4 md:left-8 lg:left-16 xl:left-20 2xl:left-24 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-300 hover:opacity-60 z-10"
           >
             <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-              <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M8 1L1 8M1 8L8 15M1 8H39" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <button
@@ -452,7 +444,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
             className="absolute right-4 md:right-8 lg:right-16 xl:right-20 2xl:right-24 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center transition-all duration-300 hover:opacity-60 z-10"
           >
             <svg width="32" height="14" viewBox="0 0 40 16" fill="none" className="md:w-10 md:h-4">
-              <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M32 1L39 8M39 8L32 15M39 8H1" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
@@ -462,9 +454,8 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
               <button
                 key={index}
                 onClick={() => setCurrentProjectSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  currentProjectSlide === index ? 'bg-black w-8' : 'bg-black/30'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${currentProjectSlide === index ? 'bg-black w-8' : 'bg-black/30'
+                  }`}
               />
             ))}
           </div>
@@ -480,7 +471,7 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
           >
             COLLABORATIONS
           </h2>
-          
+
           {/* Irregular Grid Layout */}
           <div className="space-y-10 md:space-y-16 lg:space-y-24">
             {/* Row 1: Image left + Text right */}
