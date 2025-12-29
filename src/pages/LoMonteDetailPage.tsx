@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Footer } from '../components/Footer';
-import loMonteHero from 'figma:asset/125269930790ccd2be40ad77b43904026f51e8f3.png';
-import designCenterImg from 'figma:asset/ed1f0b721249b6434a381f33909542b14339bb39.png';
-import creativityImg from '../assets/02 CREATIVITY.jpg';
-import gallery1 from '../assets/0d9ad32d56e9e5f4b58faa80d21eea5e567fce01.png';
-import gallery2 from '../assets/a470bb18fa575e3305f946464d5859af3fb79df7.png';
-import gallery3 from '../assets/7e84584ddb0842e9ef3facae423dcf9f65777fd0.png';
-import gallery4 from '../assets/4ceff593ad1a537feada60941403ddeb7874c371.png';
-import gallery5 from '../assets/65b33145a393c5bc6380ad6f00e6bbc2749756a7.png';
+
+import loMonteHero from '../assets/brands/lomonte/hero.png';
+import designCenterImg from '../assets/brands/lomonte/design-center.png';
+import creativityImg from '../assets/brands/lomonte/creativity.jpg';
+import gallery1 from '../assets/brands/lomonte/production-bags.png';
+import gallery2 from '../assets/brands/lomonte/production-shoes.png';
+import gallery3 from '../assets/brands/lomonte/production-clothing.png';
+import gallery4 from '../assets/brands/lomonte/production-accessories.png';
+import gallery5 from '../assets/brands/lomonte/production-jewelry.png';
 
 interface LoMonteDetailPageProps {
   onBack: () => void;
@@ -271,9 +272,9 @@ export function LoMonteDetailPage({ onBack, onNavigate }: LoMonteDetailPageProps
           <div className="relative mt-12 md:mt-16 lg:mt-20">
             <div className="overflow-hidden">
               <motion.div
-                className="flex gap-12 md:gap-20"
+                className="flex gap-6 md:gap-20"
                 animate={{
-                  x: `calc(-${currentSlide * (100 / slidesPerView)}% - ${currentSlide * (slidesPerView < 3 ? 24 : 40)}px)`
+                  x: `calc(-${currentSlide * (100 / slidesPerView)}% - ${currentSlide * (slidesPerView === 1 ? 0 : slidesPerView === 2 ? 12 : 40)}px)`
                 }}
                 transition={isTransitioning ? { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } : { duration: 0 }}
               >

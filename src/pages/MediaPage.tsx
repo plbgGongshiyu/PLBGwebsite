@@ -1,71 +1,71 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-import wwdArticle from 'figma:asset/611dcdd008bcfe5958bad27ffefd1845d555a1cb.png';
-import mediaReplacement from '../assets/2.png';
-import mediaThird from '../assets/3.png';
-import mediaFourth from '../assets/4.png';
-import mediaFifth from '../assets/5.png';
-import mediaSixth from '../assets/6.png';
-import mediaSeventh from '../assets/7.png';
-import mediaEighth from '../assets/8.png';
-import mediaNinth from '../assets/9.png';
-import mediaTenth from '../assets/10.png';
-import mediaEleventh from '../assets/11.png';
-import mediaTwelfth from '../assets/12.png';
-import mediaThirteenth from '../assets/13.png';
-import mediaFourteenth from '../assets/14.png';
-import mediaFifteenth from '../assets/15.png';
-import mediaSixteenth from '../assets/16.png';
-import mediaSeventeenth from '../assets/17.png';
-import mediaEighteenth from '../assets/18.png';
-import mediaNineteenth from '../assets/19.png';
-import mediaTwentieth from '../assets/20.png';
-import mediaTwentyFirst from '../assets/21.png';
-import mediaTwentySecond from '../assets/22.png';
-import mediaTwentyThird from '../assets/23.png';
-import mediaTwentyFourth from '../assets/24.png';
-import mediaTwentyFifth from '../assets/25.png';
-import mediaTwentySixth from '../assets/26.png';
-import mediaTwentySeventh from '../assets/27.png';
-import mediaTwentyEighth from '../assets/28.png';
-import mediaTwentyNinth from '../assets/29.png';
-import mediaThirtieth from '../assets/30.png';
-import mediaThirtyFirst from '../assets/31.png';
+import coverage1 from '../assets/media/coverage-1.png';
+import coverage2 from '../assets/media/coverage-2.png';
+import coverage3 from '../assets/media/coverage-3.png';
+import coverage4 from '../assets/media/coverage-4.png';
+import coverage5 from '../assets/media/coverage-5.png';
+import coverage6 from '../assets/media/coverage-6.png';
+import coverage7 from '../assets/media/coverage-7.png';
+import coverage8 from '../assets/media/coverage-8.png';
+import coverage9 from '../assets/media/coverage-9.png';
+import coverage10 from '../assets/media/coverage-10.png';
+import coverage11 from '../assets/media/coverage-11.png';
+import coverage12 from '../assets/media/coverage-12.png';
+import coverage13 from '../assets/media/coverage-13.png';
+import coverage14 from '../assets/media/coverage-14.png';
+import coverage15 from '../assets/media/coverage-15.png';
+import coverage16 from '../assets/media/coverage-16.png';
+import coverage17 from '../assets/media/coverage-17.png';
+import coverage18 from '../assets/media/coverage-18.png';
+import coverage19 from '../assets/media/coverage-19.png';
+import coverage20 from '../assets/media/coverage-20.png';
+import coverage21 from '../assets/media/coverage-21.png';
+import coverage22 from '../assets/media/coverage-22.png';
+import coverage23 from '../assets/media/coverage-23.png';
+import coverage24 from '../assets/media/coverage-24.png';
+import coverage25 from '../assets/media/coverage-25.png';
+import coverage26 from '../assets/media/coverage-26.png';
+import coverage27 from '../assets/media/coverage-27.png';
+import coverage28 from '../assets/media/coverage-28.png';
+import coverage29 from '../assets/media/coverage-29.png';
+import coverage30 from '../assets/media/coverage-30.png';
+import coverage31 from '../assets/media/coverage-31.png';
 
 export function MediaPage({ language }: { language: 'EN' | 'CN' }) {
     const mediaImages = [
-        wwdArticle,
-        mediaReplacement,
-        mediaThird,
-        mediaFourth,
-        mediaFifth,
-        mediaSixth,
-        mediaSeventh,
-        mediaEighth,
-        mediaNinth,
-        mediaTenth,
-        mediaEleventh,
-        mediaTwelfth,
-        mediaThirteenth,
-        mediaFourteenth,
-        mediaFifteenth,
-        mediaSixteenth,
-        mediaSeventeenth,
-        mediaEighteenth,
-        mediaNineteenth,
-        mediaTwentieth,
-        mediaTwentyFirst,
-        mediaTwentySecond,
-        mediaTwentyThird,
-        mediaTwentyFourth,
-        mediaTwentyFifth,
-        mediaTwentySixth,
-        mediaTwentySeventh,
-        mediaTwentyEighth,
-        mediaTwentyNinth,
-        mediaThirtieth,
-        mediaThirtyFirst,
+        coverage1,
+        coverage2,
+        coverage3,
+        coverage4,
+        coverage5,
+        coverage6,
+        coverage7,
+        coverage8,
+        coverage9,
+        coverage10,
+        coverage11,
+        coverage12,
+        coverage13,
+        coverage14,
+        coverage15,
+        coverage16,
+        coverage17,
+        coverage18,
+        coverage19,
+        coverage20,
+        coverage21,
+        coverage22,
+        coverage23,
+        coverage24,
+        coverage25,
+        coverage26,
+        coverage27,
+        coverage28,
+        coverage29,
+        coverage30,
+        coverage31,
     ];
 
     return (
@@ -110,8 +110,6 @@ export function MediaPage({ language }: { language: 'EN' | 'CN' }) {
                     </div>
                 </motion.div>
             </section>
-
-            {/* Footer */}
 
         </div>
     );

@@ -1,4 +1,4 @@
-import heroImage from 'figma:asset/25766536a5333e65b42b8482ec64f8d2862a726f.png';
+import heroImage from '../assets/group/hero.png';
 
 export function Hero({ language }: { language: 'EN' | 'CN' }) {
   return (
@@ -13,13 +13,13 @@ export function Hero({ language }: { language: 'EN' | 'CN' }) {
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-black opacity-20"></div>
       </div>
-      
+
       {/* Text Overlay */}
       <div className="relative z-10 text-center px-6">
-        <h1 
+        <h1
           className="text-white text-[26px] lg:text-[60px]"
-          style={{ 
-            fontFamily: 'Playfair Display', 
+          style={{
+            fontFamily: 'Playfair Display',
             fontWeight: 400,
             lineHeight: 1.2,
             letterSpacing: '1px'

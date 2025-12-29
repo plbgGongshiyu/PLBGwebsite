@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import thriveImg from 'figma:asset/ada0a97b6d69772519cb064b3400f319ce112794.png';
-import communicationImg from 'figma:asset/90e5f80558085ce9176b9558b1804aa60ff045b9.png';
-import inclusionImg from 'figma:asset/31b83d541f46d42c236295d5decd0a720b18013a.png';
-import flexibilityImg from 'figma:asset/f662356dca547c88645f716d935ad3d2539bfcff.png';
-import creativityImg from 'figma:asset/220226788c7263a0cab67634ec600885a0479b3c.png';
+import thriveImg from '../assets/careers/thrive.png';
+import communicationImg from '../assets/careers/communication.png';
+import inclusionImg from '../assets/careers/inclusion.png';
+import flexibilityImg from '../assets/careers/flexibility.png';
+import creativityImg from '../assets/careers/creativity.png';
 
 interface ValueSlide {
   title: string;

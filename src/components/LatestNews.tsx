@@ -1,6 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import jwPeiNewsImage from '../assets/JW PEI  (9).jpg';
-import originalImage from '../assets/original.webp';
+import jwPeiNewsImage from '../assets/brands/jwpei/product-9.jpg';
+import originalImage from '../assets/brands/danse-lente/store-news.webp';
 
 type NewsItem = {
   category: string;
@@ -61,13 +61,13 @@ export function LatestNews({ language }: { language: 'EN' | 'CN' }) {
   return (
     <section className="px-[0px] pb-[60px] pt-[60px] lg:pb-[100px] lg:pt-[150px]">
       <div className="max-w-7xl mx-auto">
-        <h2 
+        <h2
           className="mb-6 text-center text-black opacity-90 text-[22px] lg:hidden"
           style={{ fontFamily: 'Playfair Display', fontWeight: 500, letterSpacing: '1px' }}
         >
           {title}
         </h2>
-        <h2 
+        <h2
           className="hidden lg:block lg:mb-[80px] text-center text-black opacity-90 lg:text-[36px]"
           style={{ fontFamily: 'Playfair Display', fontWeight: 500, letterSpacing: '1px' }}
         >
@@ -81,15 +81,13 @@ export function LatestNews({ language }: { language: 'EN' | 'CN' }) {
             return (
               <article
                 key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start ${
-                  item.layout === 'image-right' ? 'lg:grid-flow-dense' : ''
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start ${item.layout === 'image-right' ? 'lg:grid-flow-dense' : ''
+                  }`}
               >
                 {/* Image */}
                 <div
-                  className={`relative overflow-hidden aspect-[4/3] bg-gray-100 ${
-                    item.layout === 'image-right' ? 'lg:col-start-2' : ''
-                  }`}
+                  className={`relative overflow-hidden aspect-[4/3] bg-gray-100 ${item.layout === 'image-right' ? 'lg:col-start-2' : ''
+                    }`}
                 >
                   <ImageWithFallback
                     src={item.image}
@@ -104,11 +102,11 @@ export function LatestNews({ language }: { language: 'EN' | 'CN' }) {
                     <h3 className="leading-snug" style={{ fontFamily: 'Roboto', fontSize: '24px', fontWeight: 400, hyphens: 'none' }}>
                       {item.title}
                     </h3>
-                    
+
                     <p className="leading-relaxed" style={{ fontFamily: 'Roboto', fontWeight: 300, fontSize: '15px', color: '#000000', hyphens: 'none' }}>
                       {item.description}
                     </p>
-                    
+
                     {readMoreUrl ? (
                       <a
                         href={readMoreUrl}

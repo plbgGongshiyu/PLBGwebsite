@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import plbgLogoWall from 'figma:asset/553ae4da5474969683995a4d9ee50ad26bed9ab3.png';
-import plbgOfficeImage from 'figma:asset/c2d00458c2f444ddc0648e8fbc7e1c8d7a8a8168.png';
-import jwpeiProductImage from 'figma:asset/64c39c56c346caa9fd41ccbb16e822c2488af25f.png';
-import handbagImage from 'figma:asset/5dd18d68e3884dcb7a44dc301bceb02ce358fc09.png';
-import distributionMap from 'figma:asset/b9556fd41c78eef0db0722bd084eee4bf483ff16.png';
-import galeriesLafayette from 'figma:asset/4e4408c0e86f60e26f54fc8bd33f1c57160229a1.png';
-import selfridges from 'figma:asset/4dedb40e0fa6129dd8874e7ccb113737d46ec853.png';
-import departmentStore from 'figma:asset/a75165943e241a8325b7a5ef1717a346fad264a4.png';
-import tryano from 'figma:asset/a0255712c7b6dde8847fe54776ca817f24765668.png';
-import laRinascente from 'figma:asset/ccf8aa2b0c7ff7ee698a8b5ccb07cbb2d0a25aa0.png';
-import deBijenkorf from 'figma:asset/15a2f6e3024db448c4166400af844ffb9816a0bf.png';
+
+import plbgLogoWall from '../assets/group/plbg-logo-wall.png';
+import plbgOfficeImage from '../assets/group/plbg-office.png';
+import jwpeiProductImage from '../assets/group/jwpei-product.png';
+import handbagImage from '../assets/group/handbag-figures.png';
+import distributionMap from '../assets/group/distribution-map.png';
+import galeriesLafayette from '../assets/group/galeries-lafayette.png';
+import selfridges from '../assets/group/selfridges.png';
+import departmentStore from '../assets/group/department-store.png';
+import tryano from '../assets/group/tryano.png';
+import laRinascente from '../assets/group/la-rinascente.png';
+import deBijenkorf from '../assets/group/de-bijenkorf.png';
 
 interface GroupPageProps {
   language: 'EN' | 'CN';
@@ -282,7 +283,7 @@ export function GroupPage({ language }: GroupPageProps) {
             {/* Right - Image */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
@@ -320,16 +321,16 @@ export function GroupPage({ language }: GroupPageProps) {
               >
                 KEY FIGURES
               </h2>
-              <p className="text-xs md:text-sm leading-relaxed" style={{ hyphens: 'none', maxWidth: '320%', color: '#ffffff' }}>
-                <div style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: 'clamp(14px, 4vw, 22.5px)', lineHeight: 1.2, color: '#ffffff' }}>
+              <div className="text-xs md:text-sm leading-relaxed" style={{ hyphens: 'none', maxWidth: '100%', color: '#ffffff' }}>
+                <div style={{ fontFamily: 'Playfair Display', fontWeight: 400, fontSize: 'clamp(14px, 4vw, 22.5px)', lineHeight: 1.2, color: '#ffffff', maxWidth: '540px' }}>
                   PLBG is a global brand group focused on Investment, Brand Management, Creative Development, and Sustainable Growth in Fashion.
                 </div>
-              </p>
+              </div>
             </div>
             {/* Statistics */}
-            <div className="flex w-full flex-row gap-x-24 md:gap-x-32 lg:gap-x-48 mt-4 md:mt-6">
+            <div className="flex w-full flex-row" style={{ columnGap: 'clamp(20px, 7.5vw, 125px)', marginTop: '24px' }}>
               <div
-                className="flex flex-col gap-y-12 md:gap-y-32 lg:gap-y-48"
+                className="flex flex-col gap-y-8 md:gap-y-32 lg:gap-y-48"
                 style={{ marginLeft: '0px', marginRight: '0px' }}
               >
                 <div>
@@ -345,10 +346,7 @@ export function GroupPage({ language }: GroupPageProps) {
                   </div>
                 </div>
               </div>
-              <div
-                className="flex flex-col gap-y-12 md:gap-y-32 lg:gap-y-48"
-                style={{ marginLeft: '65px', marginRight: '0px' }}
-              >
+              <div className="flex flex-col gap-y-8 md:gap-y-32 lg:gap-y-48">
                 <div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', height: '65px' }}>
                     <div style={{ fontFamily: 'Roboto', fontSize: 'clamp(16px, 3vw, 30px)', lineHeight: 1, color: '#ffffff' }}>300+</div>

@@ -3,42 +3,43 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
 import { Footer } from '../components/Footer';
-import jwpeiHero from 'figma:asset/b9862912a13eee8ccd2de5bff9cece75ce08c2b0.png';
-import jwpeiGif1 from 'figma:asset/9de5e729134dbda4fd7981ff2773169f92fbf3d8.png';
-import jwpeiGif2 from 'figma:asset/37bd8523e63443ba47e45c6dccc93babcd3a1d73.png';
-import jwpeiGif3 from 'figma:asset/44edc70468fa289e3e8b4ff5d8c9eb39a2246248.png';
-import jwpeiStatic1 from 'figma:asset/356ff2b559a0a0c6f1a99e9f9aabbb48822d434f.png';
-import jwpeiStatic2 from 'figma:asset/ad2c20ade3e760b109d361418dbee6f2f5bd6282.png';
-import jwpeiStatic3 from 'figma:asset/13f1a94bda2576dbea38638f5aa611d698aada7d.png';
-import sohoStore1 from 'figma:asset/a1961446e5afc2b2dea5c1267ebafc77fb6baf1c.png';
-import sohoStore2 from 'figma:asset/6c2aa1b4d512ad97210117808e9655511e2d9424.png';
-import galeriesLafayetteStore from 'figma:asset/3f1ee563c9d9bacd389e04b138b1de309111c4e4.png';
-import harveyNicholsStore from 'figma:asset/7d02ee8f2ca9e13529d1ae7f3dc70784d77803ee.png';
-import deBijenkorfStore from 'figma:asset/1c59d1132bcdd90b06224da8e4ff4bf91623971f.png';
-import laRinascenteStore from 'figma:asset/4e8f0a6b97659ba2ddf7c0bd976308c2d7daa08f.png';
-import levelShoesStore from 'figma:asset/c6066b4d25cb52c1a5a5f01a07914771147c5791.png';
-import tryanoStore from 'figma:asset/3f7ad4c276a66fa9755263d7aef6c4631a2fd052.png';
-import jwpeiLogo from 'figma:asset/35e0df62aa479dca9c4fcb76de796714860b622a.png';
 
-import celeb1 from '../assets/JWPEI/celebrities/celeb_1.jpg';
-import celeb2 from '../assets/JWPEI/celebrities/celeb_2.jpg';
-import celeb3 from '../assets/JWPEI/celebrities/celeb_3.jpg';
-import celeb4 from '../assets/JWPEI/celebrities/4Gigi Hadid.jpg';
-import celeb5 from '../assets/JWPEI/celebrities/5Hailey Bieber.jpg';
-import celeb6 from '../assets/JWPEI/celebrities/6Anne Hathaway.jpg';
-import celeb7 from '../assets/JWPEI/celebrities/7Emily Ratajkowski.jpg';
-import celeb8 from '../assets/JWPEI/celebrities/8Emily Ratajkowski.jpg';
-import celeb9 from '../assets/JWPEI/celebrities/9Emily Ratajkowski.jpg';
-import celeb10 from '../assets/JWPEI/celebrities/10Doja Cat.jpg';
-import celeb11 from '../assets/JWPEI/celebrities/11Joey King.jpg';
-import celeb12 from '../assets/JWPEI/celebrities/12Irina Shayk.jpg';
-import celeb13 from '../assets/JWPEI/celebrities/13Tinashe.jpg';
-import celeb14 from '../assets/JWPEI/celebrities/14Lucy Hale.jpg';
-import celeb15 from '../assets/JWPEI/celebrities/15Shay Mitchell.jpg';
-import celeb16 from '../assets/JWPEI/celebrities/16Saweetie.jpg';
-import celeb17 from '../assets/JWPEI/celebrities/17Nina Dobrev.jpg';
-import celeb18 from '../assets/JWPEI/celebrities/celeb_18.jpg';
-import celeb19 from '../assets/JWPEI/celebrities/19Ali Wong.jpg';
+import jwpeiHero from '../assets/brands/jwpei/hero.png';
+import jwpeiGif1 from '../assets/brands/jwpei/gif-1.png';
+import jwpeiGif2 from '../assets/brands/jwpei/gif-2.png';
+import jwpeiGif3 from '../assets/brands/jwpei/gif-3.png';
+import jwpeiStatic1 from '../assets/brands/jwpei/static-1.png';
+import jwpeiStatic2 from '../assets/brands/jwpei/static-2.png';
+import jwpeiStatic3 from '../assets/brands/jwpei/static-3.png';
+import sohoStore1 from '../assets/brands/jwpei/stores/ny-soho-1.png';
+import sohoStore2 from '../assets/brands/jwpei/stores/ny-soho-2.png';
+import galeriesLafayetteStore from '../assets/brands/jwpei/stores/galeries-lafayette.png';
+import harveyNicholsStore from '../assets/brands/jwpei/stores/harvey-nichols.png';
+import deBijenkorfStore from '../assets/brands/jwpei/stores/de-bijenkorf.png';
+import laRinascenteStore from '../assets/brands/jwpei/stores/la-rinascente.png';
+import levelShoesStore from '../assets/brands/jwpei/stores/level-shoes.png';
+import tryanoStore from '../assets/brands/jwpei/stores/tryano.png';
+import jwpeiLogo from '../assets/logos/jwpei-logo.png';
+
+import celeb1 from '../assets/brands/jwpei/celebrities/celeb_1.jpg';
+import celeb2 from '../assets/brands/jwpei/celebrities/celeb_2.jpg';
+import celeb3 from '../assets/brands/jwpei/celebrities/celeb_3.jpg';
+import celeb4 from '../assets/brands/jwpei/celebrities/4Gigi Hadid.jpg';
+import celeb5 from '../assets/brands/jwpei/celebrities/5Hailey Bieber.jpg';
+import celeb6 from '../assets/brands/jwpei/celebrities/6Anne Hathaway.jpg';
+import celeb7 from '../assets/brands/jwpei/celebrities/7Emily Ratajkowski.jpg';
+import celeb8 from '../assets/brands/jwpei/celebrities/8Emily Ratajkowski.jpg';
+import celeb9 from '../assets/brands/jwpei/celebrities/9Emily Ratajkowski.jpg';
+import celeb10 from '../assets/brands/jwpei/celebrities/10Doja Cat.jpg';
+import celeb11 from '../assets/brands/jwpei/celebrities/11Joey King.jpg';
+import celeb12 from '../assets/brands/jwpei/celebrities/12Irina Shayk.jpg';
+import celeb13 from '../assets/brands/jwpei/celebrities/13Tinashe.jpg';
+import celeb14 from '../assets/brands/jwpei/celebrities/14Lucy Hale.jpg';
+import celeb15 from '../assets/brands/jwpei/celebrities/15Shay Mitchell.jpg';
+import celeb16 from '../assets/brands/jwpei/celebrities/16Saweetie.jpg';
+import celeb17 from '../assets/brands/jwpei/celebrities/17Nina Dobrev.jpg';
+import celeb18 from '../assets/brands/jwpei/celebrities/celeb_18.jpg';
+import celeb19 from '../assets/brands/jwpei/celebrities/19Ali Wong.jpg';
 
 interface JWPeiDetailPageProps {
   onBack: () => void;
@@ -370,10 +371,20 @@ export function JWPeiDetailPage({ onBack, onNavigate }: JWPeiDetailPageProps) {
               <div className="space-y-4">
                 <p style={{ fontFamily: 'Roboto', fontWeight: 500, fontSize: '16px', color: '#000000' }}>FOLLOW US</p>
                 <div className="flex gap-6">
-                  <a href="#" className="hover:opacity-60 transition-opacity">
+                  <a
+                    href="https://www.instagram.com/jwpei_official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-60 transition-opacity"
+                  >
                     <Instagram size={24} color="#000000" />
                   </a>
-                  <a href="#" className="hover:opacity-60 transition-opacity">
+                  <a
+                    href="https://www.tiktok.com/@jwpeiofficial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-60 transition-opacity"
+                  >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="#000000">
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                     </svg>

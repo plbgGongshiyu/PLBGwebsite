@@ -3,29 +3,30 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ArrowLeft, ChevronLeft, ChevronRight, Instagram } from 'lucide-react';
 import { Footer } from '../components/Footer';
-import danseLenteHero from 'figma:asset/7a54d467fafaab17f99538fa8087d556ebf154b0.png';
-import danseLenteLogo from 'figma:asset/0cd3e121a8aabf722309a5271a3808374c4313bd.png';
-import danseLenteGif1 from 'figma:asset/87bce36bd648a3e86a98b34a6ce6e530ba61e7bc.png';
-import danseLenteGif2 from 'figma:asset/7c093184a7e2af5630dc6ebfd98814cc2d08415f.png';
-import danseLenteGif3 from 'figma:asset/f28253d23331eacd01aedd1a14974a617e0ddcd9.png';
-import danseLenteStatic1 from 'figma:asset/ecfcb1c0af503a8a908149a04469208bd276914c.png';
-import danseLenteStatic2 from 'figma:asset/a5dff8da32a6e0ddb58ef4b7d6132c4e22778a30.png';
-import danseLenteStatic3 from 'figma:asset/8ca6194a4c04dac28292924cd022bcc44d9b4c74.png';
-import popup1 from 'figma:asset/69a2c54676229bb75fdf52af199e838caae37ae5.png';
-import popup2 from 'figma:asset/81825cf0b04545607d194c0d6a24fc2e6696543c.png';
-import popup3 from 'figma:asset/26bc238cf376d36cc21e1cc324d3e83589632d81.png';
-import popup4 from 'figma:asset/202168a25bf891fc95c4fa461f0bf5b3aacad819.png';
-import popup5 from 'figma:asset/f13c973c1c30606aed3e32065f81445018cdb888.png';
-import popup6 from 'figma:asset/19374dfa2648684e99ff148ad3d9ea39abc644be.png';
-import specialProject1 from 'figma:asset/23f6241cacd82322fe5e7a3d44ed550b1b70aa1b.png';
-import specialProject2 from 'figma:asset/75e5678c3f38a0429ad840f78e99b999ba33d7a3.png';
-import specialProject3 from 'figma:asset/ee27b996c10fac8664b4ba6a07f9a5643fb900bc.png';
-import specialProject4 from 'figma:asset/bf88a742edbc8414cb6a06b1d7d94492d4d5cae5.png';
-import collab1 from 'figma:asset/6441296a7cb33d7bf03bdd797d81d22acb807445.png';
-import collab2 from 'figma:asset/9f1255fbf6392d49a67bfc9201247394af86bf4a.png';
-import collab3 from '../assets/4 (2).jpg';
-import collab4 from 'figma:asset/7af6424d2959f06af0bbb6b89796203299c8290f.png';
-import collab5 from 'figma:asset/9869900814da11c46d65bd002e2d2b52379d17da.png';
+
+import danseLenteHero from '../assets/brands/danse-lente/hero.png';
+import danseLenteLogo from '../assets/logos/danse-lente-logo.png';
+import danseLenteGif1 from '../assets/brands/danse-lente/gif-1.png';
+import danseLenteGif2 from '../assets/brands/danse-lente/gif-2.png';
+import danseLenteGif3 from '../assets/brands/danse-lente/gif-3.png';
+import danseLenteStatic1 from '../assets/brands/danse-lente/static-1.png';
+import danseLenteStatic2 from '../assets/brands/danse-lente/static-2.png';
+import danseLenteStatic3 from '../assets/brands/danse-lente/static-3.png';
+import popup1 from '../assets/brands/danse-lente/popups/press-day-copenhagen.png';
+import popup2 from '../assets/brands/danse-lente/popups/forty-five-ten-dallas.png';
+import popup3 from '../assets/brands/danse-lente/popups/corso-como-nyc.png';
+import popup4 from '../assets/brands/danse-lente/popups/los-angeles.png';
+import popup5 from '../assets/brands/danse-lente/popups/covent-garden-london.png';
+import popup6 from '../assets/brands/danse-lente/popups/dsm-london.png';
+import specialProject1 from '../assets/brands/danse-lente/special-projects/noah-lyon.png';
+import specialProject2 from '../assets/brands/danse-lente/special-projects/galeries-lafayette.png';
+import specialProject3 from '../assets/brands/danse-lente/special-projects/maison-trouvaille.png';
+import specialProject4 from '../assets/brands/danse-lente/special-projects/maisie-wilen.png';
+import collab1 from '../assets/brands/danse-lente/collaborations/ig-filter.png';
+import collab2 from '../assets/brands/danse-lente/collaborations/misty-project.png';
+import collab3 from '../assets/brands/danse-lente/collaborations/mini-johnny-snake.jpg';
+import collab4 from '../assets/brands/danse-lente/collaborations/dead-hungry.png';
+import collab5 from '../assets/brands/danse-lente/collaborations/sojinails.png';
 
 interface DanseLenteDetailPageProps {
   onBack: () => void;
@@ -289,7 +290,12 @@ export function DanseLenteDetailPage({ onBack }: DanseLenteDetailPageProps) {
               <div className="space-y-4">
                 <p style={{ fontFamily: 'Roboto', fontWeight: 500, fontSize: '16px', color: '#000000' }}>FOLLOW US</p>
                 <div className="flex gap-6">
-                  <a href="#" className="hover:opacity-60 transition-opacity">
+                  <a
+                    href="https://www.instagram.com/danselente_official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-60 transition-opacity"
+                  >
                     <Instagram size={24} color="#000000" />
                   </a>
                   <a href="#" className="hover:opacity-60 transition-opacity">

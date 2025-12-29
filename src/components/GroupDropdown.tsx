@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import groupImage from 'figma:asset/553ae4da5474969683995a4d9ee50ad26bed9ab3.png';
-import plbgOfficeImage from 'figma:asset/c2d00458c2f444ddc0648e8fbc7e1c8d7a8a8168.png';
-import jwpeiProductImage from 'figma:asset/64c39c56c346caa9fd41ccbb16e822c2488af25f.png';
-import danselenteProductImage from 'figma:asset/7837c0f68fe15a8cea48b38a03d2f2cb97389aaa.png';
+import groupImage from '../assets/group/dropdown-group.png';
+import plbgOfficeImage from '../assets/group/plbg-office.png';
+import jwpeiProductImage from '../assets/group/jwpei-product.png';
+import danselenteProductImage from '../assets/group/dropdown-figures.png';
 
 type Section = 'group' | 'vision' | 'responsibility' | 'figures';
 
@@ -32,12 +32,12 @@ const groupContent = {
   CN: {
     group: {
       title: '集团',
-      text: 'PLBG 是全球新兴时尚品牌的领先平台，从资本到运营提供全面支持，建立连接创意与商业的可持续生态系统。',
+      text: 'PLBG 是全球新兴时尚品牌的领先 platform，从资本到运营提供全面支持，建立连接创意与商业的可持续生态系统。',
       image: groupImage
     },
     vision: {
       title: '愿景',
-      text: 'PLBG 致力于成为全球新兴时尚品牌的领先平台，从资本到运营提供全面支持，建立连接创意与商业的可持续生态系统。',
+      text: 'PLBG 致力于成为全球新兴时尚品牌的领先 platform，从资本到运营提供全面支持，建立连接创意与商业的可持续生态系统。',
       image: plbgOfficeImage
     },
     responsibility: {
@@ -55,7 +55,7 @@ const groupContent = {
 
 export function GroupDropdown({ language, isMobile = false }: { language: 'EN' | 'CN', isMobile?: boolean }) {
   const [activeSection, setActiveSection] = useState<Section>('group');
-  
+
   const sections: { id: Section; labelEN: string; labelCN: string }[] = [
     { id: 'group', labelEN: 'GROUP', labelCN: '集团' },
     { id: 'vision', labelEN: 'VISION', labelCN: '愿景' },
@@ -75,14 +75,13 @@ export function GroupDropdown({ language, isMobile = false }: { language: 'EN' |
               <button
                 key={section.id}
                 onClick={() => setActiveSection(section.id)}
-                className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
-                  activeSection === section.id 
-                    ? 'bg-black text-white' 
+                className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${activeSection === section.id
+                    ? 'bg-black text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-                style={{ 
-                  fontSize: '12px', 
-                  fontFamily: 'Playfair Display', 
+                  }`}
+                style={{
+                  fontSize: '12px',
+                  fontFamily: 'Playfair Display',
                   fontWeight: 400
                 }}
               >
@@ -104,21 +103,21 @@ export function GroupDropdown({ language, isMobile = false }: { language: 'EN' |
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
-          <h3 
+          <h3
             className="mb-2"
-            style={{ 
-              fontSize: '14px', 
-              fontFamily: 'Roboto', 
+            style={{
+              fontSize: '14px',
+              fontFamily: 'Roboto',
               fontWeight: 400
             }}
           >
             {content.title}
           </h3>
-          <p 
+          <p
             className="text-gray-600"
-            style={{ 
-              fontSize: '12px', 
-              fontFamily: 'Roboto', 
+            style={{
+              fontSize: '12px',
+              fontFamily: 'Roboto',
               lineHeight: '1.6'
             }}
           >
@@ -130,7 +129,7 @@ export function GroupDropdown({ language, isMobile = false }: { language: 'EN' |
   }
 
   return (
-    <div 
+    <div
       className="border-t border-black/10 bg-white shadow-lg animate-slideDown"
     >
       <div className="px-6 md:px-12 lg:px-20 py-10">
@@ -142,12 +141,11 @@ export function GroupDropdown({ language, isMobile = false }: { language: 'EN' |
                 <button
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`block text-left tracking-wide transition-colors ${
-                    activeSection === section.id ? 'text-black' : ''
-                  } hover:text-black`}
-                  style={{ 
-                    fontSize: '14px', 
-                    fontFamily: 'Playfair Display', 
+                  className={`block text-left tracking-wide transition-colors ${activeSection === section.id ? 'text-black' : ''
+                    } hover:text-black`}
+                  style={{
+                    fontSize: '14px',
+                    fontFamily: 'Playfair Display',
                     fontWeight: 400,
                     color: activeSection === section.id ? '#000000' : '#898889'
                   }}
@@ -159,7 +157,7 @@ export function GroupDropdown({ language, isMobile = false }: { language: 'EN' |
           </div>
 
           {/* Image Area */}
-          <div 
+          <div
             className="w-full max-w-md"
             key={`${activeSection}-image`}
           >

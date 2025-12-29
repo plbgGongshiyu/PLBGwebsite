@@ -1,9 +1,9 @@
-import jwpeiDropdownImage from 'figma:asset/5830a4ea4168decb0972cd1fc235720bba8369b7.png';
-import danselenteDropdownImage from 'figma:asset/9e80a3c1eb06eec8a49dd0b0d171ce70755201be.png';
-import lomonteDropdownImage from 'figma:asset/fa9dc742d96b47dc3de4d94271eef8c06eaed1e5.png';
-import jwpeiLogo from '../assets/logo_JWPEI.png';
-import danseLenteLogo from '../assets/logo_DANSELENTE.png';
-import loMonteLogo from '../assets/logo_LOMONTEINTERNATIONAL.png';
+import jwpeiDropdownImage from '../assets/portfolio/jwpei-dropdown.png';
+import danselenteDropdownImage from '../assets/portfolio/danselente-dropdown.png';
+import lomonteDropdownImage from '../assets/portfolio/lomonte-dropdown.png';
+import jwpeiLogo from '../assets/logos/jwpei-logo.png';
+import danseLenteLogo from '../assets/logos/danse-lente-logo.png';
+import loMonteLogo from '../assets/logos/lomonte-logo.png';
 
 const brands = [
   {
