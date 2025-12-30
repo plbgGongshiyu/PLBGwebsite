@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import logoImage from '../assets/logos/plbg-logo.png';
+const logoImage = 'https://storage.googleapis.com/plbg/assets/logos/plbg-logo.png';
 
 export function Footer({ language, onNavigate }: { language: 'EN' | 'CN', onNavigate?: (page: any) => void }) {
   const [email, setEmail] = useState('');

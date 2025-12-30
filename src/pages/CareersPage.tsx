@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import thriveImg from '../assets/careers/thrive.png';
-import communicationImg from '../assets/careers/communication.png';
-import inclusionImg from '../assets/careers/inclusion.png';
-import flexibilityImg from '../assets/careers/flexibility.png';
-import creativityImg from '../assets/careers/creativity.png';
+const thriveImg = 'https://storage.googleapis.com/plbg/assets/careers/thrive.png';
+const communicationImg = 'https://storage.googleapis.com/plbg/assets/careers/communication.png';
+const inclusionImg = 'https://storage.googleapis.com/plbg/assets/careers/inclusion.png';
+const flexibilityImg = 'https://storage.googleapis.com/plbg/assets/careers/flexibility.png';
+const creativityImg = 'https://storage.googleapis.com/plbg/assets/careers/creativity.png';
 
 interface ValueSlide {
   title: string;

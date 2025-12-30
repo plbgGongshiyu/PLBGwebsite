@@ -1,6 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import jwPeiNewsImage from '../assets/brands/jwpei/product-9.jpg';
-import originalImage from '../assets/brands/danse-lente/store-news.webp';
+const jwPeiNewsImage = 'https://storage.googleapis.com/plbg/assets/brands/jwpei/product-9.jpg';
+const originalImage = 'https://storage.googleapis.com/plbg/assets/brands/danse-lente/store-news.webp';
 
 type NewsItem = {
   category: string;

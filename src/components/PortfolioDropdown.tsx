@@ -1,9 +1,9 @@
-import jwpeiDropdownImage from '../assets/portfolio/jwpei-dropdown.png';
-import danselenteDropdownImage from '../assets/portfolio/danselente-dropdown.png';
-import lomonteDropdownImage from '../assets/portfolio/lomonte-dropdown.png';
-import jwpeiLogo from '../assets/logos/jwpei-logo.png';
-import danseLenteLogo from '../assets/logos/danse-lente-logo.png';
-import loMonteLogo from '../assets/logos/lomonte-logo.png';
+const jwpeiDropdownImage = 'https://storage.googleapis.com/plbg/assets/portfolio/jwpei-dropdown.png';
+const danselenteDropdownImage = 'https://storage.googleapis.com/plbg/assets/portfolio/danselente-dropdown.png';
+const lomonteDropdownImage = 'https://storage.googleapis.com/plbg/assets/portfolio/lomonte-dropdown.png';
+const jwpeiLogo = 'https://storage.googleapis.com/plbg/assets/logos/jwpei-logo.png';
+const danseLenteLogo = 'https://storage.googleapis.com/plbg/assets/logos/danse-lente-logo.png';
+const loMonteLogo = 'https://storage.googleapis.com/plbg/assets/logos/lomonte-logo.png';
 
 const brands = [
   {

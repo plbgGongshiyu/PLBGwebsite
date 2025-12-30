@@ -1,4 +1,4 @@
-import heroImage from '../assets/group/hero.png';
+const heroImage = 'https://storage.googleapis.com/plbg/assets/group/hero.png';
 
 export function Hero({ language }: { language: 'EN' | 'CN' }) {
   return (

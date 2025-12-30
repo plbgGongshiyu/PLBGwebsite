@@ -3,14 +3,14 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Footer } from '../components/Footer';
 
-import loMonteHero from '../assets/brands/lomonte/hero.png';
-import designCenterImg from '../assets/brands/lomonte/design-center.png';
-import creativityImg from '../assets/brands/lomonte/creativity.jpg';
-import gallery1 from '../assets/brands/lomonte/production-bags.png';
-import gallery2 from '../assets/brands/lomonte/production-shoes.png';
-import gallery3 from '../assets/brands/lomonte/production-clothing.png';
-import gallery4 from '../assets/brands/lomonte/production-accessories.png';
-import gallery5 from '../assets/brands/lomonte/production-jewelry.png';
+const loMonteHero = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/hero.png';
+const designCenterImg = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/design-center.png';
+const creativityImg = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/creativity.jpg';
+const gallery1 = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/production-bags.png';
+const gallery2 = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/production-shoes.png';
+const gallery3 = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/production-clothing.png';
+const gallery4 = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/production-accessories.png';
+const gallery5 = 'https://storage.googleapis.com/plbg/assets/brands/lomonte/production-jewelry.png';
 
 interface LoMonteDetailPageProps {
   onBack: () => void;

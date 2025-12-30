@@ -1,8 +1,8 @@
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-import jwPeiStatic from '../assets/portfolio/jwpei-cover.png';
-import danseLenteStatic from '../assets/portfolio/danselente-cover.png';
-import loMonteStatic from '../assets/portfolio/lomonte-cover.png';
+const jwPeiStatic = 'https://storage.googleapis.com/plbg/assets/portfolio/jwpei-cover.png';
+const danseLenteStatic = 'https://storage.googleapis.com/plbg/assets/portfolio/danselente-cover.png';
+const loMonteStatic = 'https://storage.googleapis.com/plbg/assets/portfolio/lomonte-cover.png';
 
 interface PortfolioPageProps {
   language: 'EN' | 'CN';

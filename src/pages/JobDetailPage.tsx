@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Footer } from '../components/Footer';
-import logoJWPEI from '../assets/logos/jwpei-logo.png';
+const logoJWPEI = 'https://storage.googleapis.com/plbg/assets/logos/jwpei-logo.png';
 
 interface JobDetailPageProps {
     onBack: () => void;

@@ -3,7 +3,7 @@ import { Menu, ChevronDown } from 'lucide-react';
 import { GroupDropdown } from './GroupDropdown';
 import { PortfolioDropdown } from './PortfolioDropdown';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
-import logoImage from '../assets/logos/plbg-logo.png';
+const logoImage = 'https://storage.googleapis.com/plbg/assets/logos/plbg-logo.png';
 
 export function Header({ language, setLanguage, onNavigate, currentPage, onBrandClick }: {
   language: 'EN' | 'CN',

@@ -2,17 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-import plbgLogoWall from '../assets/group/plbg-logo-wall.png';
-import plbgOfficeImage from '../assets/group/plbg-office.png';
-import jwpeiProductImage from '../assets/group/jwpei-product.png';
-import handbagImage from '../assets/group/handbag-figures.png';
-import distributionMap from '../assets/group/distribution-map.png';
-import galeriesLafayette from '../assets/group/galeries-lafayette.png';
-import selfridges from '../assets/group/selfridges.png';
-import departmentStore from '../assets/group/department-store.png';
-import tryano from '../assets/group/tryano.png';
-import laRinascente from '../assets/group/la-rinascente.png';
-import deBijenkorf from '../assets/group/de-bijenkorf.png';
+const plbgLogoWall = 'https://storage.googleapis.com/plbg/assets/group/plbg-logo-wall.png';
+const plbgOfficeImage = 'https://storage.googleapis.com/plbg/assets/group/plbg-office.png';
+const jwpeiProductImage = 'https://storage.googleapis.com/plbg/assets/group/jwpei-product.png';
+const handbagImage = 'https://storage.googleapis.com/plbg/assets/group/handbag-figures.png';
+const distributionMap = 'https://storage.googleapis.com/plbg/assets/group/distribution-map.png';
+const galeriesLafayette = 'https://storage.googleapis.com/plbg/assets/group/galeries-lafayette.png';
+const selfridges = 'https://storage.googleapis.com/plbg/assets/group/selfridges.png';
+const departmentStore = 'https://storage.googleapis.com/plbg/assets/group/department-store.png';
+const tryano = 'https://storage.googleapis.com/plbg/assets/group/tryano.png';
+const laRinascente = 'https://storage.googleapis.com/plbg/assets/group/la-rinascente.png';
+const deBijenkorf = 'https://storage.googleapis.com/plbg/assets/group/de-bijenkorf.png';
 
 interface GroupPageProps {
   language: 'EN' | 'CN';

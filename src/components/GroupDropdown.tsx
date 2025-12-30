@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import groupImage from '../assets/group/dropdown-group.png';
-import plbgOfficeImage from '../assets/group/plbg-office.png';
-import jwpeiProductImage from '../assets/group/jwpei-product.png';
-import danselenteProductImage from '../assets/group/dropdown-figures.png';
+
+const groupImage = 'https://storage.googleapis.com/plbg/assets/group/dropdown-group.png';
+const plbgOfficeImage = 'https://storage.googleapis.com/plbg/assets/group/plbg-office.png';
+const jwpeiProductImage = 'https://storage.googleapis.com/plbg/assets/group/jwpei-product.png';
+const danselenteProductImage = 'https://storage.googleapis.com/plbg/assets/group/dropdown-figures.png';
 
 type Section = 'group' | 'vision' | 'responsibility' | 'figures';
 
@@ -76,8 +77,8 @@ export function GroupDropdown({ language, isMobile = false }: { language: 'EN' |
                 key={section.id}
                 onClick={() => setActiveSection(section.id)}
                 className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${activeSection === section.id
-                    ? 'bg-black text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'bg-black text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 style={{
                   fontSize: '12px',

@@ -1,7 +1,11 @@
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-    *, :before, :after, ::backdrop {
+
+    *,
+    :before,
+    :after,
+    ::backdrop {
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
@@ -53,7 +57,9 @@
 }
 
 @layer theme {
-  :root, :host {
+
+  :root,
+  :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-gray-50: oklch(.985 .002 247.839);
@@ -112,7 +118,11 @@
 }
 
 @layer base {
-  *, :after, :before, ::backdrop {
+
+  *,
+  :after,
+  :before,
+  ::backdrop {
     box-sizing: border-box;
     border: 0 solid;
     margin: 0;
@@ -126,7 +136,8 @@
     padding: 0;
   }
 
-  html, :host {
+  html,
+  :host {
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     line-height: 1.5;
@@ -151,7 +162,12 @@
     text-decoration: underline dotted;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: inherit;
     font-weight: inherit;
   }
@@ -163,11 +179,15 @@
     text-decoration: inherit;
   }
 
-  b, strong {
+  b,
+  strong {
     font-weight: bolder;
   }
 
-  code, kbd, samp, pre {
+  code,
+  kbd,
+  samp,
+  pre {
     font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
     font-feature-settings: var(--default-mono-font-feature-settings, normal);
     font-variation-settings: var(--default-mono-font-variation-settings, normal);
@@ -178,7 +198,8 @@
     font-size: 80%;
   }
 
-  sub, sup {
+  sub,
+  sup {
     vertical-align: baseline;
     font-size: 75%;
     line-height: 0;
@@ -211,21 +232,35 @@
     display: list-item;
   }
 
-  ol, ul, menu {
+  ol,
+  ul,
+  menu {
     list-style: none;
   }
 
-  img, svg, video, canvas, audio, iframe, embed, object {
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
     vertical-align: middle;
     display: block;
   }
 
-  img, video {
+  img,
+  video {
     max-width: 100%;
     height: auto;
   }
 
-  button, input, select, optgroup, textarea {
+  button,
+  input,
+  select,
+  optgroup,
+  textarea {
     font: inherit;
     font-feature-settings: inherit;
     font-variation-settings: inherit;
@@ -331,7 +366,8 @@
     box-shadow: none;
   }
 
-  button, input:where([type="button"], [type="reset"], [type="submit"]) {
+  button,
+  input:where([type="button"], [type="reset"], [type="submit"]) {
     appearance: button;
   }
 
@@ -408,7 +444,8 @@
     line-height: 1.5;
   }
 
-  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) label, :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) button {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) label,
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) button {
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
@@ -578,31 +615,31 @@
     width: 100%;
   }
 
-  @media (width >= 40rem) {
+  @media (width >=40rem) {
     .container {
       max-width: 40rem;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .container {
       max-width: 48rem;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .container {
       max-width: 64rem;
     }
   }
 
-  @media (width >= 80rem) {
+  @media (width >=80rem) {
     .container {
       max-width: 80rem;
     }
   }
 
-  @media (width >= 96rem) {
+  @media (width >=96rem) {
     .container {
       max-width: 96rem;
     }
@@ -1833,319 +1870,319 @@
     --tw-enter-translate-y: -100%;
   }
 
-  @media (width >= 40rem) {
+  @media (width >=40rem) {
     .sm\:w-\[350px\] {
       width: 350px;
     }
   }
 
-  @media (width >= 40rem) {
+  @media (width >=40rem) {
     .sm\:max-w-sm {
       max-width: var(--container-sm);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:top-1\/2 {
       top: 50%;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:top-\[58px\] {
       top: 58px;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:right-4 {
       right: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:right-6 {
       right: calc(var(--spacing) * 6);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:right-8 {
       right: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:right-12 {
       right: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:-bottom-2 {
       bottom: calc(var(--spacing) * -2);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:bottom-8 {
       bottom: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:bottom-10 {
       bottom: calc(var(--spacing) * 10);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:left-4 {
       left: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:left-6 {
       left: calc(var(--spacing) * 6);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:left-8 {
       left: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mx-\[50px\] {
       margin-inline: 50px;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:my-\[0px\] {
       margin-block: 0;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mt-0 {
       margin-top: calc(var(--spacing) * 0);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mt-12 {
       margin-top: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mt-16 {
       margin-top: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mt-20 {
       margin-top: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mb-6 {
       margin-bottom: calc(var(--spacing) * 6);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mb-8 {
       margin-bottom: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mb-12 {
       margin-bottom: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:mb-16 {
       margin-bottom: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:grid {
       display: grid;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:hidden {
       display: none;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:h-4 {
       height: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:h-5 {
       height: calc(var(--spacing) * 5);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:h-12 {
       height: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:h-\[31vh\] {
       height: 31vh;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:h-full {
       height: 100%;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:h-screen {
       height: 100vh;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:min-h-\[400px\] {
       min-height: 400px;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:w-1\/2 {
       width: 50%;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:w-5 {
       width: calc(var(--spacing) * 5);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:w-8 {
       width: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:w-10 {
       width: calc(var(--spacing) * 10);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:w-12 {
       width: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:min-w-0 {
       min-width: calc(var(--spacing) * 0);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:grid-cols-\[1\.5fr_1fr\] {
       grid-template-columns: 1.5fr 1fr;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:grid-cols-\[1fr_1\.5fr\] {
       grid-template-columns: 1fr 1.5fr;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:grid-cols-\[2fr_1fr\] {
       grid-template-columns: 2fr 1fr;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:flex-row {
       flex-direction: row;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:justify-center {
       justify-content: center;
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:gap-3 {
       gap: calc(var(--spacing) * 3);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:gap-4 {
       gap: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:gap-6 {
       gap: calc(var(--spacing) * 6);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:gap-8 {
       gap: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:gap-12 {
       gap: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:gap-16 {
       gap: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-1 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
@@ -2153,7 +2190,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-2 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
@@ -2161,7 +2198,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-3 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
@@ -2169,7 +2206,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-4 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
@@ -2177,7 +2214,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-6 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
@@ -2185,7 +2222,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-8 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
@@ -2193,7 +2230,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-12 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
@@ -2201,7 +2238,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-16 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 16) * var(--tw-space-y-reverse));
@@ -2209,7 +2246,7 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     :where(.md\:space-y-32 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 32) * var(--tw-space-y-reverse));
@@ -2217,347 +2254,347 @@
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:p-12 {
       padding: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-0 {
       padding-inline: calc(var(--spacing) * 0);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-4 {
       padding-inline: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-8 {
       padding-inline: calc(var(--spacing) * 8);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-10 {
       padding-inline: calc(var(--spacing) * 10);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-12 {
       padding-inline: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-16 {
       padding-inline: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:px-20 {
       padding-inline: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:py-0 {
       padding-block: calc(var(--spacing) * 0);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:py-6 {
       padding-block: calc(var(--spacing) * 6);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:py-16 {
       padding-block: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:py-20 {
       padding-block: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:py-24 {
       padding-block: calc(var(--spacing) * 24);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:py-32 {
       padding-block: calc(var(--spacing) * 32);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:pt-32 {
       padding-top: calc(var(--spacing) * 32);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:pb-4 {
       padding-bottom: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:pb-16 {
       padding-bottom: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:text-4xl {
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:text-sm {
       font-size: var(--text-sm);
       line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:text-xs {
       font-size: var(--text-xs);
       line-height: var(--tw-leading, var(--text-xs--line-height));
     }
   }
 
-  @media (width >= 48rem) {
+  @media (width >=48rem) {
     .md\:tracking-\[0\.3em\] {
       --tw-tracking: .3em;
       letter-spacing: .3em;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:right-20 {
       right: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:bottom-12 {
       bottom: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:left-12 {
       left: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:col-start-1 {
       grid-column-start: 1;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:col-start-2 {
       grid-column-start: 2;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:row-start-1 {
       grid-row-start: 1;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:mt-20 {
       margin-top: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:mb-12 {
       margin-bottom: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:mb-24 {
       margin-bottom: calc(var(--spacing) * 24);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:mb-\[80px\] {
       margin-bottom: 80px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:block {
       display: block;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:flex {
       display: flex;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:hidden {
       display: none;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:aspect-auto {
       aspect-ratio: auto;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:h-\[58\.08px\] {
       height: 58.08px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:h-auto {
       height: auto;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:h-screen {
       height: 100vh;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:min-h-\[500px\] {
       min-height: 500px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:w-\[40\%\] {
       width: 40%;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:w-\[45\%\] {
       width: 45%;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:max-w-\[70\%\] {
       max-width: 70%;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:grid-flow-dense {
       grid-auto-flow: dense;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:grid-cols-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:grid-cols-5 {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:flex-row {
       flex-direction: row;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:items-end {
       align-items: flex-end;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-4 {
       gap: calc(var(--spacing) * 4);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-6 {
       gap: calc(var(--spacing) * 6);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-10 {
       gap: calc(var(--spacing) * 10);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-12 {
       gap: calc(var(--spacing) * 12);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-16 {
       gap: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-20 {
       gap: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:gap-24 {
       gap: calc(var(--spacing) * 24);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     :where(.lg\:space-y-3 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
@@ -2565,7 +2602,7 @@
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     :where(.lg\:space-y-24 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 24) * var(--tw-space-y-reverse));
@@ -2573,129 +2610,129 @@
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:p-16 {
       padding: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:px-14 {
       padding-inline: calc(var(--spacing) * 14);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:px-16 {
       padding-inline: calc(var(--spacing) * 16);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:px-20 {
       padding-inline: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:px-24 {
       padding-inline: calc(var(--spacing) * 24);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:px-\[80px\] {
       padding-inline: 80px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:py-24 {
       padding-block: calc(var(--spacing) * 24);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:py-32 {
       padding-block: calc(var(--spacing) * 32);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:py-40 {
       padding-block: calc(var(--spacing) * 40);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:py-\[22px\] {
       padding-block: 22px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:py-\[150px\] {
       padding-block: 150px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:pt-\[150px\] {
       padding-top: 150px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:pb-24 {
       padding-bottom: calc(var(--spacing) * 24);
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:pb-\[100px\] {
       padding-bottom: 100px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:text-5xl {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:text-base {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:text-\[18px\] {
       font-size: 18px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:text-\[36px\] {
       font-size: 36px;
     }
   }
 
-  @media (width >= 64rem) {
+  @media (width >=64rem) {
     .lg\:text-\[60px\] {
       font-size: 60px;
     }
   }
 
-  @media (width >= 80rem) {
+  @media (width >=80rem) {
     .xl\:px-20 {
       padding-inline: calc(var(--spacing) * 20);
     }
   }
 
-  @media (width >= 80rem) {
+  @media (width >=80rem) {
     .xl\:pb-32 {
       padding-bottom: calc(var(--spacing) * 32);
     }
@@ -2894,33 +2931,6 @@ html {
 
 @property --tw-border-style {
   syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-
-@property --tw-leading {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false
-}
-
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-
-@property --tw-shadow-color {
-  syntax: "*";
   inherits: false
 }
 
@@ -3098,4 +3108,10 @@ html {
     opacity: var(--tw-exit-opacity, 1);
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
+}
+
+body.app-loading nav.sticky {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  display: none !important;
 }

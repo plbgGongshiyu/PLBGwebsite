@@ -1,6 +1,6 @@
-import jwpeiImage from '../assets/portfolio/jwpei-main.png';
-import danselenteImage from '../assets/portfolio/danselente-main.png';
-import lomonteImage from '../assets/portfolio/lomonte-cover.png';
+const jwpeiImage = 'https://storage.googleapis.com/plbg/assets/portfolio/jwpei-main.png';
+const danselenteImage = 'https://storage.googleapis.com/plbg/assets/portfolio/danselente-main.png';
+const lomonteImage = 'https://storage.googleapis.com/plbg/assets/portfolio/lomonte-cover.png';
 
 const brands = [
   {
