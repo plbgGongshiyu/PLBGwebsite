@@ -52,7 +52,7 @@ export function Footer({ language, onNavigate }: { language: 'EN' | 'CN', onNavi
               {signUpTitle}
             </h3>
             <form onSubmit={handleSubmit} className="relative w-full" style={{ width: '700px', maxWidth: '100%' }}>
-              <div className="flex items-center gap-3 pb-2 border-b border-black w-full" style={{ borderBottomWidth: '1.5px', borderColor: '#000000' }}>
+              <div className="flex items-center gap-3 pb-2 border-b border-black w-full" style={{ borderBottom: '1.5px solid #000000' }}>
                 <input
                   type="email"
                   value={email}

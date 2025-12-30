@@ -64,10 +64,10 @@ export default function App() {
       });
     };
 
-    // Set a maximum wait time of 5 seconds
+    // Set a maximum wait time of 9 seconds
     maxWaitTimer = window.setTimeout(() => {
       setIsPageLoading(false);
-    }, 5000);
+    }, 9000);
 
     checkImages();
 
